@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+<link rel="stylesheet" href="js/bootstrap.min.css">
+
+<title> Token Factory-Issuing your own token on the Ethernet with one click</title>
+<script src="js/jquery.min.js"></script>
+<script src="js/sweetAlert.js"></script>
+<script src="js/web3.min.js"></script>
+<style type="text/css">
+
+
+.wfiedls{
+    display: none;
+    
+  }
+
+
+
+
+
+.NameField{
+    display: none;    
+}
+
+.SymbolField{
+    display: none;    
+}
+
+.InitSupplyField{
+    display: none;    
+}
+
+
+.AdminField{
+    display: none;    
+}
+
+
+.DecimalsField{
+    display: none;    
+}
+
+.SupplyField{
+    display: none;
+    
+}
+
+.CapField{
+    display: none;
+    
+}
+.BaseURIField{
+    display: none;
+    
+}
+
+#loader1 {
+  width: 200px;
+  display: none;
+}
+
+#loader2 {
+  width: 200px;
+  display: none;
+}
+
+#loader3 {
+  width: 200px;
+  display: none;
+}
+#loader4 {
+  width: 200px;
+  display: none;
+}
+
+#timer div {
+   background-color: #b1afde;
+   color: #ffffff;
+   width: 100px;
+   height: 105px;
+   border-radius: 5px;
+   font-size: 35px;
+   font-weight: 700;
+   margin-left: 10px;
+   margin-right: 10px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+#timer div span {
+   display: block;
+   margin-top: -2px;
+   font-size: 15px;
+   font-weight: 500;
+}
+
+@media only screen and (max-width: 1080px) {
+   #timer {
+     margin-top: -20px;
+   }
+   #timer div {
+     width: 95px;
+     height: 100px;
+     font-size: 32px;
+     margin-top: 20px;
+  }
+  #timer div span {
+    font-size: 14px;
+  }
+}
+
+
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+</style>
+
+   <link href="pricing.css" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="text-secondary font-weight-light">
+
+<header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-body border-bottom shadow-sm">
+  <p class="h5 my-0 me-md-auto fw-normal">Token Factory - Issuing your own token on the Ethernet with one click</p>
+
+<!--
+  <nav class="my-2 my-md-0 me-md-3">
+    <a class="p-2 text-dark" href="#">Features</a>
+    <a class="p-2 text-dark" href="#">Enterprise</a>
+    <a class="p-2 text-dark" href="#">Support</a>
+    <a class="p-2 text-dark" href="#">Pricing</a>
+  </nav>
+  <a class="btn btn-outline-primary" href="#">Sign up</a>
+-->
+
+</header>
+
+
+
+<main class="container">
+
+
+
+
+<div class=" px-3 py-3 pt-md-5 pb-md-4 mx-auto">
+<!--.........................-->
+<!--.........................-->
+<!--.........................-->
+<!--.........................-->
+<!--.........................-->
+<form>  
+<div class="col-md-9">  
+
+ <div id="TokenDescription"></div>
+
+ <div id="InstallMetamaskDescription"></div>
+
+ <fieldset class="form-group">
+    <label for="exampleSelect1">Type OF Token</label>
+
+
+    <select class="form-control" id="SelectTokenType">
+      <option>ERC20 Fixed Amount Token</option>
+      <option>ERC20 Burnable Token</option>
+      <option>ERC20 Mintable Token</option>
+      <option>ERC20 Pausable Token</option>
+      <option>ERC20 Capped Token</option>
+      <option>ERC20 Multi Function Token</option>
+      <option>ERC721 Full Function Token</option>
+      </select>
+  </fieldset>
+
+
+<!-- Below will only show if Timber Frame is selected -->
+  
+  <fieldset class="form-group wfiedls">
+    <label for="PartyWalls">Which walls are party walls?</label>
+       <br><input type="text"> W1
+
+  </fieldset>
+<!-- Above will only show if Timber Frame is selected -->
+
+
+<fieldset class="form-group NameField">
+<label for="FloorWidthA">Name</label>
+<input id="name" class="form-control " type="text" placeholder="Your Token Name,For example: Tesla"/>
+</fieldset>
+
+<fieldset class="form-group SymbolField">
+<label for="FloorWidthA">symbol</label>
+<input id="symbol" class="form-control" type="text" placeholder="Your Token Symbol,For example: TSLA"/>
+</fieldset>
+
+<fieldset class="form-group DecimalsField">
+<label for="FloorWidthA">decimals(If you don’t know what this is, please fill in: 18)</label>
+<input id="decimals" class="form-control" type="text" value=18 placeholder="Your Token Decimals"/>
+</fieldset>
+
+<fieldset class="form-group SupplyField">
+<label for="FloorWidthA">supplyAmount</label>
+<input id="supplyAmount" class="form-control" type="text" value=1000000000000 placeholder="supplyAmount,For example: 10000000"/>
+</fieldset>
+
+<fieldset class="form-group InitSupplyField">
+<label for="FloorWidthA">supplyAmount</label>
+<input id="InitSupplyAmount" class="form-control" value=1000000000000 type="text" placeholder="InitSupplyAmount"/>
+</fieldset>
+
+
+
+<fieldset class="form-group CapField">
+<label for="FloorWidthA">cap</label>
+<input id="cap" class="form-control" type="text" value=2000000000000 placeholder="> supply amount,For example: 2000000000000"/>
+</fieldset>
+
+<fieldset class="form-group AdminField">
+<label for="FloorWidthA">Admin Address</label>
+<input id="adminAddress" class="form-control" type="text" placeholder="admin Address"/>
+</fieldset>
+
+
+<fieldset class="form-group BaseURIField">
+<label for="FloorWidthA">BaseURI</label>
+<input id="baseuri" class="form-control" type="text" placeholder="BaseURI"/>
+</fieldset>
+
+<br>
+
+
+  
+<!--  
+  <fieldset class="form-group">
+    <label for="FloorWidthA">Is there a stair Opening?</label>
+  <br><input type="checkbox">
+  </fieldset>
+-->
+  
+ <b><div id="SubmitResult"></div><b>
+ <img id="loader1" src="loading.gif"></img>
+  <br>
+  
+  
+  <button  id="TokenSubmit" class="btn btn-primary ml-auto" type="button" title="Next">Submit</button>
+ 
+</form>
+</div>
+<!--.........................-->
+<!--.........................-->
+<!--.........................-->
+<!--.........................-->
+<!--.........................-->
+<!--.........................-->
+
+
+  </div>
+
+
+
+
+<!--.........................-->
+<!--.........................-->
+<!-- 
+  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Pricing</h1>
+    <p class="lead">One-key generate token。</p>
+  </div>
+
+
+
+
+  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    <div class="col">
+      <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 fw-normal">Fixed Amount Token</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">0.01 <small class="text-muted"> ether + gas fee</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>ERC20</li>
+          <li>Fixed Amount Token</li>
+
+        </ul>
+
+       
+      </div>
+    </div>
+    </div>
+    <div class="col">
+      <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 fw-normal">Burnable Token</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">0.015<small class="text-muted">ether</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>ERC20</li>
+          <li>Burnable Token</li>
+          <li>Can destroy token</li>
+ 
+        </ul>
+
+      
+    
+      </div>
+    </div>
+    </div>
+
+    <div class="col">
+      <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 fw-normal">Mintable Token</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">0.015<small class="text-muted"> ether</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>ERC20</li>
+          <li>Mintable Token</li>
+          <li>Can make more tokens</li>
+ 
+        </ul>
+      
+      </div>
+    </div>
+    </div>
+
+    <div class="col">
+      <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 fw-normal">Pausable Token</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">0.015 <small class="text-muted"> ether</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+
+<li>    
+<span class="badge badge-primary">ERC20</span>
+<span class="badge badge-secondary">Pausable</span>
+<span class="badge badge-success">Success</span>
+<span class="badge badge-danger">Danger</span>
+<span class="badge badge-warning">Warning</span>
+<span class="badge badge-info">Info</span>
+<span class="badge badge-light">Light</span>
+<span class="badge badge-dark">Dark</span>
+</li>
+        </ul>
+      
+      </div>
+    </div>
+    </div>
+
+
+        <div class="col">
+      <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 fw-normal">Capped Token</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">0.015<small class="text-muted"> ether</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>ERC20</li>
+          <li>Capped Token</li>
+          <li>You can set the cap amount of token</li>
+ 
+        </ul>
+      
+      </div>
+    </div>
+    </div>
+
+
+
+        <div class="col">
+      <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 fw-normal">Multi Function Token</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">0.025<small class="text-muted"> ether</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+
+ 
+<li>    
+<span class="badge badge-primary">ERC20</span>
+<span class="badge badge-secondary">Multi Function</span>
+<span class="badge badge-success">Burnable</span>
+<span class="badge badge-info">Multifunctional</span>
+<span class="badge badge-warning">Capped</span>
+<span class="badge badge-info">Mintable</span>
+<span class="badge badge-light">Pausable</span>
+
+</li>
+
+        </ul>
+      
+      </div>
+    </div>
+    </div>
+
+
+            <div class="col">
+      <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 fw-normal">ERC721 Token</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">0.025<small class="text-muted"> ether</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>ERC721</li>
+          <li>ERC721 Token</li>
+           <li>it includes approve all functionality using operator terminology.</li>
+
+ 
+        </ul>
+      
+      </div>
+    </div>
+    </div>
+
+
+  </div>
+
+
+ -->
+<!--.........................-->
+<!--.........................-->
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br> 
+
+
+  <footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+      <div class="col-12 col-md">
+        
+        <small class="d-block mb-3 text-muted">Token Factory &copy; 2017–2022</small>
+      </div>
+      <!--
+      <div class="col-6 col-md">
+        <h5>Features</h5>
+       
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="#">Cool stuff</a></li>
+          <li><a class="link-secondary" href="#">Random feature</a></li>
+          <li><a class="link-secondary" href="#">Team feature</a></li>
+          <li><a class="link-secondary" href="#">Stuff for developers</a></li>
+          <li><a class="link-secondary" href="#">Another one</a></li>
+          <li><a class="link-secondary" href="#">Last time</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="#">Resource</a></li>
+          <li><a class="link-secondary" href="#">Resource name</a></li>
+          <li><a class="link-secondary" href="#">Another resource</a></li>
+          <li><a class="link-secondary" href="#">Final resource</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>About</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="#">Team</a></li>
+          <li><a class="link-secondary" href="#">Locations</a></li>
+          <li><a class="link-secondary" href="#">Privacy</a></li>
+          <li><a class="link-secondary" href="#">Terms</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    -->
+  </footer>
+</main>
+
+
+<!--        -->
+
+
+  <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>  -->
+    
+<script  src="./script.js"></script>
+
+
+<script src="js/ERC20FixToken.js"></script>
+<script src="js/ERC20MultiFunctionToken.js"></script>
+<script src="js/ERC20BurnableToken.js"></script>
+<script src="js/ERC20CappedToken.js"></script>
+<script src="js/ERC20MintableToken.js"></script>
+<script src="js/ERC20PausableToken.js"></script>
+
+<script src="js/ERC721FullToken.js"></script>
+
+    <script src="js/token.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <!--   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script> -->
+    <script src="js/bootstrap.min.js"  
+        crossorigin="anonymous"></script>
+
+    <script>
+
+
+
+	$(".NameField").show();
+    $(".SymbolField").show();
+    $(".DecimalsField").show();
+    $(".SupplyField").show();
+    $(".InitSupplyField").hide();
+    $(".CapField").hide();
+    $(".AdminField").show();
+    $(".BaseURIField").hide();
+
+
+var selectedBalue="ERC20 Fixed Amount Token";
+$(document).ready(function(){
+
+
+
+//validator
+
+
+
+$("#SelectTokenType").on('change',function(){
+
+$("#loader1").hide();
+$("#SubmitResult").html("");
+
+selectedBalue = $("#SelectTokenType").val();
+
+
+
+
+var ERC20Tag="<span class='badge badge-pill badge-success'>ERC20</span>";
+var FixedTag="<span class='badge badge-pill badge-primary'>Fixed Amount</span>";
+var MultiFunctionTag="<span class='badge badge-pill badge-secondary'>Multi Function</span>";
+var BurnableTag="<span class='badge badge-pill badge-success'>Burnable</span>";
+var CappedTag="<span class='badge badge-pill badge-info'>Capped</span>";
+var MintableTag="<span class='badge badge-pill badge-info'>Mintable</span>";
+var PausableTag="<span class='badge badge-pill badge-light'>Pausable</span>";
+
+var ERC721Tag="<span class='badge badge-pill badge-info'>ERC721</span>";
+
+
+var alertFront="<div class='alert alert-primary' role='alert'>";
+var alertLast="</div>";
+
+var FixedDes="You can issue a fixed amount of erc20 tokens with one-click。<br>";
+var BurnableDes="You can issue a destroyable erc20 token with one-click。<br>";
+var CappedDes="You can issue a limited number of erc20 tokens with one-click.<br>";
+var MintableDes="You can issue mintable erc20 tokens with one-click, and mint tokens for specified addresses at any time.<br>";
+var PausableDes="You can one-click to issue erc20 tokens that can be suspended.<br>";
+var MultiFunctionDes="You can one-click to issue erc20 tokens that can be suspended, minted, have an upper limit, and can be destroyed.<br>"
+var ERC721Des="You can one-click to issue ERC721 token.<br>"
+
+
+var FixedFee="Fee: 0.01 ether + Dynamic gas fee<br>";
+
+
+
+
+switch(selectedBalue) {
+	case "ERC20 Fixed Amount Token":
+   
+	$(".NameField").show();
+    $(".SymbolField").show();
+    $(".DecimalsField").show();
+    $(".SupplyField").show();
+    $(".InitSupplyField").hide();
+    $(".CapField").hide();
+    $(".AdminField").show();
+    $(".BaseURIField").hide();
+    $("#TokenDescription").html(alertFront+ FixedDes + alertLast+"<span class='badge badge-pill badge-success'>Fee: 0.01 ether + Dynamic gas fee</span><br>"+ERC20Tag+FixedTag);
+
+    break;
+
+
+	case "ERC20 Burnable Token":
+	$(".NameField").show();
+    $(".SymbolField").show();
+    $(".DecimalsField").show();
+    $(".SupplyField").show();
+    $(".InitSupplyField").hide();
+    $(".CapField").hide();
+    $(".AdminField").show();
+    $(".BaseURIField").hide();
+	$("#TokenDescription").html(alertFront+ BurnableDes+ alertLast+"<span class='badge badge-pill badge-success'>Fee: 0.015 ether + Dynamic gas fee</span><br>"+ERC20Tag+BurnableTag);
+    break;
+
+	case "ERC20 Mintable Token":
+	$(".NameField").show();
+    $(".SymbolField").show();
+    $(".DecimalsField").show();
+    $(".SupplyField").show();
+    $(".InitSupplyField").hide();
+    $(".CapField").hide();
+    $(".AdminField").show();
+    $(".BaseURIField").hide();
+    $("#TokenDescription").html(alertFront+ MintableDes+ alertLast+"<span class='badge badge-pill badge-success'>Fee: 0.015 ether + Dynamic gas fee</span><br>"+ERC20Tag+MintableTag);
+    break;
+
+	case "ERC20 Pausable Token":
+	$(".NameField").show();
+    $(".SymbolField").show();
+    $(".DecimalsField").show();
+    $(".SupplyField").show();
+    $(".InitSupplyField").hide();
+    $(".CapField").hide();
+    $(".AdminField").show();
+    $(".BaseURIField").hide();
+    $("#TokenDescription").html(alertFront+ PausableDes+ alertLast+"<span class='badge badge-pill badge-success'>Fee: 0.015 ether + Dynamic gas fee</span><br>"+ERC20Tag+FixedTag+PausableTag);
+    break;
+
+
+
+	case "ERC20 Capped Token":
+	$(".NameField").show();
+    $(".SymbolField").show();
+    $(".DecimalsField").show();
+    $(".SupplyField").hide();
+    $(".InitSupplyField").show();
+    $(".CapField").show();
+    $(".AdminField").show();
+    $(".BaseURIField").hide();
+    $("#TokenDescription").html(alertFront+ CappedDes+ alertLast+"<span class='badge badge-pill badge-success'>Fee: 0.015 ether + Dynamic gas fee</span><br>"+ERC20Tag+FixedTag+CappedTag);
+    break;
+
+
+	case "ERC20 Multi Function Token":
+	$(".NameField").show();
+    $(".SymbolField").show();
+    $(".DecimalsField").show();
+    $(".SupplyField").show();
+    $(".InitSupplyField").hide();
+    $(".CapField").show();
+    $(".AdminField").show();
+    $(".BaseURIField").hide();
+    $("#TokenDescription").html(alertFront+ MultiFunctionDes+ alertLast+"<span class='badge badge-pill badge-success'>Fee: 0.025 ether + Dynamic gas fee</span><br>"+ERC20Tag+FixedTag+MultiFunctionTag+ BurnableTag+MintableTag+CappedTag+PausableTag);
+    break;
+
+	case "ERC721 Full Function Token":
+	$(".NameField").show();
+    $(".SymbolField").show();
+    $(".DecimalsField").hide();
+    $(".SupplyField").hide();
+    $(".InitSupplyField").hide();
+    $(".CapField").hide();
+    $(".AdminField").show();
+    $(".BaseURIField").show();
+    $("#TokenDescription").html(alertFront+ ERC721Des+ alertLast+"<span class='badge badge-pill badge-success'>Fee: 0.025 ether + Dynamic gas fee</span><br>"+ERC721Tag)
+    break;
+
+
+
+
+  default:
+    // code block
+}
+
+
+      
+    }); 
+
+});
+
+
+
+
+
+
+
+
+
+
+
+$("#approveThisButton").hide();
+$("#DepositButton").hide();
+$("#WithdrawButton").hide();
+$("#getRewardButton").hide();
+$("#DepositDiv").hide();
+
+
+
+
+var FixTokenGenerateContract;
+var TransferContract;
+var ERC20MintableContract;
+var ERC721Contract;
+
+
+var TokenContract;
+
+        async function CheckMetamaskConnection() {
+            // Modern dapp browsers...
+            if (window.ethereum) {
+                window.web3 = new Web3(window.ethereum);
+                try {
+                    // Request account access if needed
+                    await ethereum.enable();
+                    // Acccounts now exposed
+                    return true;
+                } catch (error) {
+                    // User denied account access...
+                    return false;
+                }
+            }
+            // Legacy dapp browsers...
+            else if (window.web3) {
+                window.web3 = new Web3(web3.currentProvider);
+                // Acccounts always exposed
+
+                return true;
+            }
+            // Non-dapp browsers...
+            else {
+                console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+                return false;
+            }
+        }
+
+        $(document).ready(async function () {
+            var IsMetamask = await CheckMetamaskConnection();
+            if (IsMetamask) {
+
+document.getElementById("adminAddress").value = web3.currentProvider.selectedAddress;
+               //getCandicate(1);
+               //getCandicate(2);
+
+//var CurrentAccount = web3.currentProvider.selectedAddress;
+//console.log("current address:",CurrentAccount);
+//TransferContract= await web3.eth.contract(TokenSmartContractABI).at(TokenSmartContractAddress);
+//// TransferContract.transfer("0x4Dfd5d8E1504DbB68222b2eacb5e1b8572b2b4D7", "1000000000", { from: CurrentAccount});
+
+//transferToken(100000000);
+
+TokenContract= await new web3.eth.Contract(TokenSmartContractABI, TokenSmartContractAddress, {from: web3.currentProvider.selectedAddress}) ;
+
+
+
+
+
+
+
+
+
+ //TokenContract.methods.allowance(web3.currentProvider.selectedAddress,FixGenerateContractAddress).send({from: web3.currentProvider.selectedAddress}, function(error, transactionHash){
+//      console.log("transactionHash",transactionHash);
+//});
+
+
+
+/*
+TokenContract.getPastEvents('Approval', {
+    filter: {myIndexedParam: [20,23], myOtherIndexedParam: '0x123456789...'}, // Using an array means OR: e.g. 20 or 23
+    fromBlock: 0,
+    toBlock: 'latest'
+}, function(error, events){ console.log(events); })
+.then(function(events){
+    console.log("latest:",events) // same results as the optional callback above
+});
+*/
+
+
+ 
+//console.log("FixGenerateContractAddress:",FixGenerateContractAddress);
+ 
+//console.log("MultiFunctionGenerateContractAddress:",MultiFunctionGenerateContractAddress);
+//console.log("ERC20WithMintableGeneratorContractAddress:",ERC20WithMintableGeneratorContractAddress);
+
+//console.log("ERC721FullContractAddress:",ERC721FullContractAddress);
+
+
+
+
+
+
+
+
+//event check
+
+/*
+
+var StakedEvent=FixTokenGenerateContract.Staked();
+StakedEvent.watch(function(error,result){
+    if (!error) {
+      console.log("StakedEvent:",result);
+         $("#loader").hide();
+
+         balanceOf(web3.currentProvider.selectedAddress);
+		earned(web3.currentProvider.selectedAddress);
+
+        //  $("#instructor").html(result.args.newDuration);
+    }else {
+        $("#loader").hide();
+        console.log(error);
+    }
+})
+
+
+
+var RewardPaidEvent=FixTokenGenerateContract.RewardPaid();
+RewardPaidEvent.watch(function(error,result){
+    if (!error) {
+      console.log("RewardPaidEvent:",result);
+         $("#loader").hide();
+
+        balanceOf(web3.currentProvider.selectedAddress);
+		earned(web3.currentProvider.selectedAddress);
+
+        //  $("#instructor").html(result.args.newDuration);
+    }else {
+        $("#loader").hide();
+        console.log(error);
+    }
+})
+
+var setRewardsDurationEvent=FixTokenGenerateContract.RewardsDurationUpdated();
+setRewardsDurationEvent.watch(function(error,result){
+    if (!error) {
+      console.log("setRewardsDuration:",result);
+         $("#loader").hide();
+          $("#instructor").html(result.args.newDuration);
+    }else {
+        $("#loader").hide();
+        console.log(error);
+    }
+})
+*/
+
+
+$("#TokenSubmit").click(function(){
+  $("#loader1").show();
+//GenerateERC20FixToken();
+  $("#SubmitResult").html("");
+GenerateToken();
+
+});
+
+$("#createToken").click(function(){
+  $("#loader1").show();
+//GenerateERC20FixToken();
+GenerateToken();
+
+});
+
+$("#createMultiFunctionToken").click(function(){
+  $("#loader2").show();
+generateERC20MultiFunctionToken();
+
+
+});
+
+$("#createERC20MintableToken").click(function(){
+  $("#loader3").show();
+GenerateERC20MintableToken();
+
+
+});
+
+
+$("#createERC721FullToken").click(function(){
+  $("#loader4").show();
+GenerateERC721FullToken();
+
+
+});
+
+ 
+
+               // console.log("FixTokenGenerateContract",TransferContract);
+                console.log("Metamask detected!")
+            } else {
+                console.log("Metamask not detected");
+$("#InstallMetamaskDescription").html("<div class='alert alert-warning' role='alert'> <a   href='https://metamask.io/'>Click to Install Metamask First</a></div>");
+
+                
+            }
+        });
+
+
+
+
+
+
+
+var _0x1551=['User\x20denied\x20transaction\x20signature','receipt','baseuri','1nImvzK','Error:\x20','message','generate\x20Pausable\x20Token','InitSupplyAmount','XXX','Default\x20ERC20','eth','</p>','includes','<p\x20class=\x27text-danger\x27>','ERC20\x20Capped\x20Token','sendTransaction','446OtZCzg','15000000000000000','generate\x20Fix\x20Token','transactionHash','form\x20not\x20correct','supplyAmount','catch','ERC20\x20Mintable\x20Token','2403pyhGMn','generate\x20Burnable\x20Token','Contract\x20Initialize','final\x20arg:','log','TxHash:\x20','10000000000000000','generate\x20Capped\x20Token','generate\x20Fix\x20Token:','357389GJPPBq','name','148036ajGPmb','6wXVUTo','value','ERC721\x20Full\x20Function\x20Token','getGasPrice','currentProvider','getElementById','contractAddress','error','generate\x20Mintable\x20Token','ERC20\x20Fixed\x20Amount\x20Token','decimals','hide','deploy','send','gasPrice:','272495qjMNxZ','#SubmitResult','#loader1','1482160Xzlbjn','ERC20\x20Multi\x20Function\x20Token','166003ZuDZaA','356707TxsPqN','Contract','ERC20\x20Pausable\x20Token','html','adminAddress','selectedAddress','then','Fill\x20All\x20the\x20fields\x20please.','1SydzFX','25000000000000000','generate\x20Multi\x20Function'];(function(_0x94d340,_0x4333d4){var _0x95a891=_0x28f0;while(!![]){try{var _0x407141=parseInt(_0x95a891(0x215))*parseInt(_0x95a891(0x20d))+parseInt(_0x95a891(0x200))*-parseInt(_0x95a891(0x1f2))+parseInt(_0x95a891(0x1ec))+-parseInt(_0x95a891(0x21e))*parseInt(_0x95a891(0x1fa))+parseInt(_0x95a891(0x1ef))+-parseInt(_0x95a891(0x220))+-parseInt(_0x95a891(0x1f1))*parseInt(_0x95a891(0x221));if(_0x407141===_0x4333d4)break;else _0x94d340['push'](_0x94d340['shift']());}catch(_0x2116dc){_0x94d340['push'](_0x94d340['shift']());}}}(_0x1551,0xec633));function _0x28f0(_0x181964,_0x48dedf){return _0x28f0=function(_0x15510a,_0x28f082){_0x15510a=_0x15510a-0x1e5;var _0x1d986b=_0x1551[_0x15510a];return _0x1d986b;},_0x28f0(_0x181964,_0x48dedf);}async function GenerateToken(){var _0x4d2243=_0x28f0;console[_0x4d2243(0x219)](document[_0x4d2243(0x226)]('name')[_0x4d2243(0x222)]),console[_0x4d2243(0x219)](document[_0x4d2243(0x226)]('symbol')[_0x4d2243(0x222)]),console[_0x4d2243(0x219)](document[_0x4d2243(0x226)](_0x4d2243(0x1e7))['value']),console[_0x4d2243(0x219)](document[_0x4d2243(0x226)](_0x4d2243(0x212))[_0x4d2243(0x222)]);var _0x5bfe24=document[_0x4d2243(0x226)](_0x4d2243(0x21f))['value'],_0x439b05=document[_0x4d2243(0x226)]('symbol')[_0x4d2243(0x222)],_0x21a25b=document[_0x4d2243(0x226)](_0x4d2243(0x1e7))[_0x4d2243(0x222)],_0x7144dd=document[_0x4d2243(0x226)](_0x4d2243(0x212))[_0x4d2243(0x222)],_0x27b0eb=document['getElementById'](_0x4d2243(0x204))['value'],_0x57fbbc=document[_0x4d2243(0x226)]('cap')[_0x4d2243(0x222)],_0x4b49ba=document[_0x4d2243(0x226)](_0x4d2243(0x1f6))['value'],_0x30bbe4=document['getElementById'](_0x4d2243(0x1ff))['value'],_0x4c9b96,_0x3df1f8,_0x16c4df,_0x1c203b=_0x4d2243(0x21b);switch(selectedBalue){case _0x4d2243(0x1e6):_0x4c9b96=FixTokenABI,_0x3df1f8=FixTokenBytecode,_0x16c4df=[_0x5bfe24,_0x439b05,_0x21a25b,_0x7144dd,_0x4b49ba],_0x1c203b=_0x4d2243(0x21b),console['log'](_0x4d2243(0x21d)+_0x16c4df);break;case'ERC20\x20Burnable\x20Token':_0x4c9b96=ERC20BurnableABI,_0x3df1f8=ERC20BurnableBytecode,_0x16c4df=[_0x5bfe24,_0x439b05,_0x21a25b,_0x7144dd,_0x4b49ba],_0x1c203b=_0x4d2243(0x20e),console[_0x4d2243(0x219)](_0x4d2243(0x216));break;case _0x4d2243(0x214):_0x4c9b96=ERC20MintableABI,_0x3df1f8=ERC20MintableBytecode,_0x16c4df=[_0x5bfe24,_0x439b05,_0x21a25b,_0x7144dd,_0x4b49ba],_0x1c203b=_0x4d2243(0x20e),console[_0x4d2243(0x219)](_0x4d2243(0x1e5));break;case _0x4d2243(0x1f4):_0x4c9b96=ERC20PausableABI,_0x3df1f8=ERC20PausableBytecode,_0x16c4df=[_0x5bfe24,_0x439b05,_0x21a25b,_0x7144dd,_0x4b49ba],_0x1c203b=_0x4d2243(0x20e),console[_0x4d2243(0x219)](_0x4d2243(0x203));break;case _0x4d2243(0x20b):_0x4c9b96=ERC20CappedABI,_0x3df1f8=ERC20CappedBytecode,_0x16c4df=[_0x5bfe24,_0x439b05,_0x21a25b,_0x27b0eb,_0x57fbbc,_0x4b49ba],_0x1c203b=_0x4d2243(0x20e),console['log'](_0x4d2243(0x21c));break;case _0x4d2243(0x1f0):_0x4c9b96=ERC20MultiFunctionABI,_0x3df1f8=ERC20MultiFunctionBytecode,_0x16c4df=[_0x5bfe24,_0x439b05,_0x21a25b,_0x7144dd,_0x57fbbc,_0x4b49ba],_0x1c203b=_0x4d2243(0x1fb),console['log'](_0x4d2243(0x1fc));break;case _0x4d2243(0x223):_0x4c9b96=ERC721FullTokenABI,_0x3df1f8=ERC721FullTokenBytecode,_0x16c4df=[_0x5bfe24,_0x439b05,_0x30bbe4],_0x1c203b=_0x4d2243(0x1fb),console[_0x4d2243(0x219)]('generate\x20ERC721\x20Full\x20Function');break;default:console[_0x4d2243(0x219)](_0x4d2243(0x206)),_0x4c9b96=FixTokenABI,_0x3df1f8=FixTokenBytecode,_0x16c4df=[_0x5bfe24,_0x439b05,_0x21a25b,_0x7144dd,_0x4b49ba],_0x1c203b=_0x4d2243(0x21b),console[_0x4d2243(0x219)](_0x4d2243(0x20f));break;}console[_0x4d2243(0x219)](_0x4d2243(0x218)+_0x16c4df);var _0x389e0e=new Boolean();_0x389e0e=![];for(let _0x572d77 in _0x16c4df){console[_0x4d2243(0x219)](_0x16c4df[_0x572d77]),!_0x16c4df[_0x572d77]&&(_0x389e0e=!![]);}var _0x109d3a='0',_0x32e3d2='x',_0x1ce4fa='1',_0x7bcd3a='a',_0x5890a8='4',_0x16836f='7',_0x3b2a5c='A',_0x49f196='b',_0x1b9954='6',_0x2fc3fc='3',_0x1e3246='9',_0x51301a='e',_0x4f50e7='6',_0x1d5e30='6',_0x4e98ff='9',_0x5afa4e='D',_0x53c564='0',_0x487d7c='A',_0x594f24='C',_0x28dfe0='2',_0x41a3b3='f',_0x50be69='6',_0x3baeb9='C',_0x1ab0da='F',_0x25561c='F',_0x58e2ca='8',_0x7362bf='0',_0x2194ec='5',_0x4c8279='1',_0x1ff182='3',_0x5f2677='f',_0x497c99='d',_0x46d354='9',_0x39d3f3='A',_0x3072b1='6',_0x1c5998='0',_0x511e58='9',_0x58f67a='b',_0x45b19e='3',_0x30cc46='3',_0x2fb305='f',_0x19c458='8',_0x1c8f97=_0x109d3a+_0x32e3d2+_0x1ce4fa+_0x7bcd3a+_0x5890a8+_0x16836f+_0x3b2a5c+_0x49f196+_0x1b9954+_0x2fc3fc+_0x1e3246+_0x51301a+_0x4f50e7+_0x1d5e30+_0x4e98ff+_0x5afa4e+_0x53c564+_0x487d7c+_0x594f24+_0x28dfe0+_0x41a3b3+_0x50be69+_0x3baeb9+_0x1ab0da+_0x25561c+_0x58e2ca+_0x7362bf+_0x2194ec+_0x4c8279+_0x1ff182+_0x5f2677+_0x497c99+_0x46d354+_0x39d3f3+_0x3072b1+_0x1c5998+_0x511e58+_0x58f67a+_0x45b19e+_0x30cc46+_0x2fb305+_0x19c458;if(!_0x389e0e){var _0x2edc13=new web3['eth'][(_0x4d2243(0x1f3))](_0x4c9b96);console[_0x4d2243(0x219)](_0x4d2243(0x217)+_0x2edc13);const _0x3af5e8=await web3['eth'][_0x4d2243(0x224)]();console[_0x4d2243(0x219)](_0x4d2243(0x1eb)+_0x3af5e8),await web3[_0x4d2243(0x207)][_0x4d2243(0x20c)]({'from':web3[_0x4d2243(0x225)][_0x4d2243(0x1f7)],'to':_0x1c8f97,'value':_0x1c203b})['then'](()=>{var _0x2d8760=_0x4d2243;_0x2edc13[_0x2d8760(0x1e9)]({'data':'0x'+_0x3df1f8,'arguments':_0x16c4df})[_0x2d8760(0x1ea)]({'from':web3[_0x2d8760(0x225)]['selectedAddress']})['on'](_0x2d8760(0x228),_0x1ffe4a=>{var _0x340a88=_0x2d8760;_0x1ffe4a[_0x340a88(0x202)][_0x340a88(0x209)](_0x340a88(0x1fd))&&(console[_0x340a88(0x219)](_0x340a88(0x205)),$(_0x340a88(0x1ee))[_0x340a88(0x1e8)]()),console['log'](_0x340a88(0x201),_0x1ffe4a);})['on'](_0x2d8760(0x210),_0x479bff=>{var _0xa19b9=_0x2d8760;console[_0xa19b9(0x219)](_0xa19b9(0x21a),_0x479bff);})['on'](_0x2d8760(0x1fe),_0x4b86ed=>{var _0x7ba704=_0x2d8760;console[_0x7ba704(0x219)]('Address:\x20',_0x4b86ed['contractAddress']),$(_0x7ba704(0x1ed))[_0x7ba704(0x1f5)]('Your\x20Token\x20Address:'+_0x7ba704(0x20a)+_0x4b86ed[_0x7ba704(0x227)]+'</p>'+'<br>Please\x20save\x20your\x20token\x20address\x20to\x20your\x20computer,\x20mobile\x20phone\x20or\x20paper.'),$(_0x7ba704(0x1ee))[_0x7ba704(0x1e8)]();})[_0x2d8760(0x1f8)](_0x3a4261=>{var _0x3403a8=_0x2d8760;console[_0x3403a8(0x219)](_0x3a4261);})[_0x2d8760(0x213)](function(_0x3e4af5){var _0x10083d=_0x2d8760;console[_0x10083d(0x219)](_0x3e4af5);});});}else $(_0x4d2243(0x1ee))[_0x4d2243(0x1e8)](),$('#SubmitResult')[_0x4d2243(0x1f5)](_0x4d2243(0x20a)+_0x4d2243(0x1f9)+_0x4d2243(0x208)),console['log'](_0x4d2243(0x211));}
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
