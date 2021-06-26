@@ -7,11 +7,10 @@ Support Language:
 >English<br>
 >简体中文<br>
 >русский <br>
->한국어<br>
-><br>فارسی 
+>한국어<br> 
 >日本語<br>
 >ไทย<br>
-
+><br>فارسی
 <img src="https://github.com/AlgoNetwork/TokenFactory/blob/main/website.png" alt="generate-erc20-token">
 
 https://algonetwork.github.io/TokenFactory/
