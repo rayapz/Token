@@ -4,13 +4,13 @@ Support Mintable,Pausable,Capped,Burnable , multi Function ERC20 Tokens and ERC7
 
 Support Language:
 
->English
->简体中文
->русский 
->한국어
->فارسی 
->日本語
->ไทย
+>English<br>
+>简体中文<br>
+>русский <br>
+>한국어<br>
+><br>فارسی 
+>日本語<br>
+>ไทย<br>
 
 <img src="https://github.com/AlgoNetwork/TokenFactory/blob/main/website.png" alt="generate-erc20-token">
 
