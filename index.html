@@ -8,12 +8,217 @@
 
 <link rel="stylesheet" href="js/bootstrap.min.css">
 
-<title> Token Factory-Issuing your own token on the Ethernet with one click</title>
+    <title> Token Factory- Issuing your own token on the Ethernet with one click</title>
 <script src="js/jquery.min.js"></script>
 <script src="js/sweetAlert.js"></script>
 <script src="js/web3.min.js"></script>
-<style type="text/css">
 
+  <script type="text/javascript">
+    var arrLang = {
+      'en': {
+        'SiteTitle': 'Token Factory-Issuing your own token on the Ethernet with One-Click',
+        'typeOfToken': 'Type OF Token',
+        'Fixed': 'ERC20 Fixed Amount Token',
+        'Burnable': 'ERC20 Burnable Token',
+        'Mintable': 'ERC20 Mintable Token',
+        'Pausable': 'ERC20 Pausable Token',
+        'Capped': 'ERC20 Capped Token',
+        'ERC20Multi': 'ERC20 Multi Function Token',
+        'ERC721Full': 'ERC721 Full Function Token',
+        'Name': 'Token Name(For example: Tesla)',
+        'Symbol': 'Token Symbol(For example: TSLA)',
+        'Decimals': 'Decimals(If you don’t know what this is, please fill in: 18)',
+        'SupplyAmount': 'Supply Amount(For example: 10000000)',
+        'InitSupplyAmount': 'Init Supply Amount(For example: 2000000000000)',
+        'Cap': 'Cap(For example: 2000000000000)',
+        'AdminAddress': 'Administrator Address',
+        'FixedDesKey': 'You can issue a fixed amount of erc20 tokens with one-click.',
+        'BurnableDesKey':'You can issue a destroyable erc20 token with one-click',
+        'MintableDesKey':'You can issue mintable erc20 tokens with one-click, and mint tokens for specified addresses at any time.',
+        'PausableDesKey':'You can one-click to issue erc20 tokens that can be suspended.',
+        'CappedDesKey':'You can issue a limited number of erc20 tokens with one-click.',
+        'MultiFunctionDesKey':'You can one-click to issue erc20 tokens that can be suspended, minted, have an upper limit, and can be destroyed.',
+        'ERC721DesKey':'You can one-click to issue ERC721 token.',
+        'FormTipsKey':'Please fill out the form completely'
+      },
+      'zh': {
+        'SiteTitle': '代币工厂 - 在以太坊上一键发行您自己的代币',
+        'typeOfToken': '代币类型',
+        'Fixed': 'ERC20固定总量代币',
+        'Burnable': 'ERC20可销毁代币',
+        'Mintable': 'ERC20可增发代币',
+        'Pausable': 'ERC20可暂停代币',
+        'Capped': 'ERC20有上限代币',
+        'ERC20Multi': 'ERC20多功能代币',
+        'ERC721Full': 'ERC721代币',
+        'Name': '代币名称(比如：Tesla)',
+        'Symbol': '代币符号(比如：Tsla)',
+        'Decimals': '小数点位数(如果您不清楚这个意思，请填写：18)',
+        'SupplyAmount': '供应总量(代币总数)',
+        'InitSupplyAmount': '初始供应总量',
+        'Cap': '上限数量',
+        'AdminAddress': '管理员地址',
+        'FixedDesKey': '您可以一键发行固定数量的erc20代币。',
+        'BurnableDesKey':'您可以一键发行可销毁的erc20代币。',
+        'MintableDesKey':'您可以一键发行可铸造的 erc20 代币，并可以随时为指定地址铸造代币。',
+        'PausableDesKey':'可以一键发行可暂停的erc20代币。',
+        'CappedDesKey':'您可以一键发行有限数量的 erc20 代币。',
+        'MultiFunctionDesKey':'可以一键发行可以暂停、铸造、有上限、可以销毁的erc20代币。',
+        'ERC721DesKey':'您可以一键发行ERC721代币。',
+        'FormTipsKey':'请将表单填写完整.'
+      },
+
+      'ru': {
+        'SiteTitle': 'Token Factory - выпуск вашего собственного токена в Ethernet в один клик',
+        'typeOfToken': 'Тип токена',
+        'Fixed': 'Токен фиксированной суммы ERC20',
+        'Burnable': 'ERC20 сжигаемый токен',
+        'Mintable': 'ERC20 Mintable Token',
+        'Pausable': 'ERC20 Pausable токен',
+        'Capped': 'Токен с ограничением ERC20',
+        'ERC20Multi': 'Многофункциональный токен ERC20',
+        'ERC721Full': 'Полнофункциональный токен ERC721',
+        'Name': 'Имя токена (например: Tesla)',
+        'Symbol': 'Символ токена (например: TSLA)',
+        'Decimals': 'Десятичные числа (если вы не знаете, что это такое, введите: 18)',
+        'SupplyAmount': 'Сумма поставки (например: 10000000)',
+        'InitSupplyAmount': 'Начальная сумма поставки (например: 2000000000000)',
+        'Cap': 'Кепка (например: 2000000000000)',
+        'AdminAddress': 'Админ-адрес',
+        'FixedDesKey': 'Вы можете выпустить фиксированное количество токенов erc20 одним щелчком мыши.',
+        'BurnableDesKey':'Вы можете выпустить уничтожаемый токен erc20 одним щелчком мыши',
+        'MintableDesKey':'Вы можете выпускать mintable токены erc20 одним щелчком мыши и mint токены для указанных адресов в любое время.',
+        'PausableDesKey':'Вы можете одним щелчком мыши выпустить токены erc20, действие которых может быть приостановлено.',
+        'CappedDesKey':'Вы можете выпустить ограниченное количество токенов erc20 одним щелчком мыши.',
+        'MultiFunctionDesKey':'Вы можете одним щелчком мыши выпустить токены erc20, которые могут быть приостановлены, отчеканены, имеют верхний предел и могут быть уничтожены.',
+        'ERC721DesKey':'Вы можете одним щелчком мыши выпустить токен ERC721.',
+        'FormTipsKey':'Пожалуйста, заполните форму полностью'
+      },
+
+
+      'kr': {
+        'SiteTitle': '토큰 팩토리-원 클릭으로 이더넷에서 자신의 토큰 발행',
+        'typeOfToken': '토큰 유형',
+        'Fixed': 'ERC20 고정 금액 토큰',
+        'Burnable': 'ERC20 가연성 토큰',
+        'Mintable': 'ERC20 Mintable 토큰',
+        'Pausable': 'ERC20 Pausable 토큰',
+        'Capped': 'ERC20 상한 토큰',
+        'ERC20Multi': 'ERC20 다기능 토큰',
+        'ERC721Full': 'ERC721 전체 기능 토큰',
+        'Name': '토큰 이름 (예 : Tesla)',
+        'Symbol': '토큰 심볼 (예 : TSLA)',
+        'Decimals': '소수 (이것이 무엇인지 모를 경우 18을 입력하십시오.)',
+        'SupplyAmount': '공급 금액 (예 : 10000000)',
+        'InitSupplyAmount': 'InitSupply 금액 (예 : 2000000000000)',
+        'Cap': '모자 (예 : 2000000000000)',
+        'AdminAddress': '관리자 주소',
+        'FixedDesKey': '원 클릭으로 고정 된 양의 erc20 토큰을 발행 할 수 있습니다.',
+        'BurnableDesKey':'원 클릭으로 파괴 가능한 erc20 토큰을 발행 할 수 있습니다.',
+        'MintableDesKey':'원 클릭으로 mintable erc20 토큰을 발행 할 수 있으며, 지정된 주소에 대해 언제든지 mint 토큰을 발행 할 수 있습니다.',
+        'PausableDesKey':'You can one-click to issue erc20 tokens that can be suspended.',
+        'CappedDesKey':'한 번의 클릭으로 제한된 수의 erc20 토큰을 발행 할 수 있습니다.',
+        'MultiFunctionDesKey':'한 번의 클릭으로 erc20 토큰을 발행 할 수 있습니다.이 토큰은 일시 중단, 발행, 상한이 있으며 파괴 될 수 있습니다.',
+        'ERC721DesKey':'원 클릭으로 ERC721 토큰을 발행 할 수 있습니다.',
+        'FormTipsKey':'양식을 완전히 작성하십시오'
+      },
+      'fa': {
+        'SiteTitle': 'Token Factory- صدور نشانه خود را در اترنت با یک کلیک',
+        'typeOfToken': 'نوع نشانه',
+        'Fixed': 'ERC20 مقدار ثابت ثابت',
+        'Burnable': 'erc20 علامت قابل انعطاف',
+        'Mintable': 'Token Mintable ERC20',
+        'Pausable': 'erc20 علامت pausable',
+        'Capped': 'erc20 capped token',
+        'ERC20Multi': 'ERC20 چند تابع نشانه',
+        'ERC721Full': 'erc721 تابع کامل تابع',
+        'Name': 'نام نشانه (به عنوان مثال: تسلا)',
+        'Symbol': 'نماد نشانه (به عنوان مثال: TSLA)',
+        'Decimals': 'decimals (اگر شما نمی دانید این چیست، لطفا پر کنید: 18)',
+        'SupplyAmount': 'مقدار عرضه (به عنوان مثال: 10000000)',
+        'InitSupplyAmount': 'مقدار INITSPLY (به عنوان مثال: 2000000000000)',
+        'Cap': 'کلاه (به عنوان مثال: 2000000000000)',
+        'AdminAddress': 'آدرس مدیر',
+        'FixedDesKey': 'شما می توانید مقدار ثابت Tokens ERC20 را با یک کلیک صادر کنید.',
+        'BurnableDesKey':'شما می توانید یک علامت از بین بردن ERC20 با یک کلیک صادر کنید',
+        'MintableDesKey':'شما می توانید نشانه های Mintable ERC20 را با یک کلیک، و نشانه های نعناع برای آدرس های مشخص شده در هر زمان صادر کنید.',
+        'PausableDesKey':'شما می توانید یک کلیک برای صدور نشانه های ERC20 که می توانند به حالت تعلیق درآمده باشند.',
+        'CappedDesKey':'شما می توانید تعداد محدودی از نشانه های ERC20 را با یک کلیک صادر کنید.',
+        'MultiFunctionDesKey':'شما می توانید یک کلیک برای صدور نشانه های ERC20 که می توانند به حالت تعلیق درآمده باشند، به حالت تعلیق درآمده اند و می توانند از بین بروند و می توانند نابود شوند.',
+        'ERC721DesKey':'شما می توانید یک کلیک برای صدور نشانه ERC721.',
+        'FormTipsKey':'لطفا فرم را کاملا پر کنید'
+      },
+
+      'jp': {
+        'SiteTitle': 'トークンファクトリ - ワンクリックでイーサネット上の独自のトークンを発行する',
+        'typeOfToken': 'トークンの種類',
+        'Fixed': 'ERC20固定金額トークン',
+        'Burnable': 'ERC20の燃えるようなトークン',
+        'Mintable': 'ERC20マインドトークン',
+        'Pausable': 'ERC20一時停止可能なトークン',
+        'Capped': 'ERC20キャップトークン',
+        'ERC20Multi': 'ERC20マルチファンクショントークン',
+        'ERC721Full': 'ERC721全機能トークン',
+        'Name': 'トークン名（例：Tesla）',
+        'Symbol': 'トークンシンボル（例：TSLA）',
+        'Decimals': '桁法（これが何であるかわからない場合は、記入してください：18）',
+        'SupplyAmount': '供給量（例えば：10000000）',
+        'InitSupplyAmount': 'initsuply額（例：2000000000000）',
+        'Cap': 'キャップ（例えば：2000000000000）',
+        'AdminAddress': 'アドミンアドレス',
+        'FixedDesKey': 'ワンクリックで固定額のERC20トークンを発行できます。',
+        'BurnableDesKey':'ワンクリックで破棄可能なERC20トークンを発行できます',
+        'MintableDesKey':'ワンクリックでマインタブルなERC20トークン、および指定されたアドレスのミントトークンはいつでも発行できます。',
+        'PausableDesKey':'一番クリックすると、中断できるERC20トークンを発行できます。',
+        'CappedDesKey':'ワンクリックで、限られた数のERC20トークンを発行できます。',
+        'MultiFunctionDesKey':'1クリックすると、中断され、ミンテッド、上限を持ち、破棄することができるERC20トークンを発行できます。',
+        'ERC721DesKey':'ワンクリックでERC721トークンを発行できます。',
+        'FormTipsKey':'フォームに完全に記入してください'
+      },
+
+      'th': {
+        'SiteTitle': 'โทเค็นโรงงานออกโทเค็นของคุณเองบนอีเธอร์เน็ตด้วยการคลิกเพียงครั้งเดียว',
+        'typeOfToken': 'ประเภทของโทเค็น',
+        'Fixed': 'โทเค็นจำนวนคงที่ ERC20',
+        'Burnable': 'ERC20 โทเค็นที่เผาไหม้ได้',
+        'Mintable': 'โทเค็น Mintable ERC20',
+        'Pausable': 'ERC20 โทเค็น Pausable  ',
+        'Capped': 'โทเค็นที่ต่อยอด ERC20',
+        'ERC20Multi': 'โทเค็นมัลติฟังก์ชั่น ERC20',
+        'ERC721Full': 'โทเค็นฟังก์ชั่น ERC721',
+        'Name': 'ชื่อโทเค็น (ตัวอย่างเช่น: เทสลา)',
+        'Symbol': 'สัญลักษณ์โทเค็น (ตัวอย่างเช่น: TSLA)',
+        'Decimals': 'ทศนิยม (ถ้าคุณไม่รู้ว่านี่คืออะไรกรุณากรอกข้อมูล: 18)',
+        'SupplyAmount': 'ปริมาณการจัดหา (ตัวอย่างเช่น: 10000000)',
+        'InitSupplyAmount': 'จำนวนเงินที่ลงทุน (ตัวอย่างเช่น: 2000000000000)',
+        'Cap': 'หมวก (ตัวอย่างเช่น: 2000000000000)',
+        'AdminAddress': 'ที่อยู่ผู้ดูแลระบบ',
+        'FixedDesKey': 'คุณสามารถออกโทเค็น ERC20 จำนวนคงที่ด้วยการคลิกเพียงครั้งเดียว',
+        'BurnableDesKey':'คุณสามารถออกโทเค็น ERC20 ที่ถูกทำลายได้ด้วยการคลิกเพียงครั้งเดียว',
+        'MintableDesKey':'คุณสามารถออกโทเค็น ERC20 ที่มีการคลิกได้ด้วยการคลิกเพียงครั้งเดียวและ Mint Tokens สำหรับที่อยู่ที่ระบุได้ตลอดเวลา',
+        'PausableDesKey':'คุณสามารถคลิกเดียวเพื่อออกโทเค็น ERC20 ที่สามารถระงับได้',
+        'CappedDesKey':'คุณสามารถออกโทเค็น ERC20 จำนวน จำกัด ด้วยการคลิกเพียงครั้งเดียว',
+        'MultiFunctionDesKey':'คุณสามารถคลิกเดียวเพื่อออกโทเค็น ERC20 ที่สามารถระงับได้ Minted มีขีด จำกัด บนและสามารถทำลายได้',
+        'ERC721DesKey':'คุณสามารถคลิกเดียวเพื่อออกโทเค็น ERC721',
+        'FormTipsKey':'กรุณากรอกแบบฟอร์มให้สมบูรณ์'
+      }
+
+    };
+
+    // Process translation
+    $(function() {
+      $('.translate').click(function() {
+        var lang = $(this).attr('id');
+
+        $('.lang').each(function(index, item) {
+          $(this).text(arrLang[lang][$(this).attr('key')]);
+        });
+      });
+    });
+  </script>
+
+
+<style type="text/css">
 
 
 .wfiedls{
@@ -140,18 +345,28 @@
 <body class="text-secondary font-weight-light">
 
 <header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-body border-bottom shadow-sm">
-  <p class="h5 my-0 me-md-auto fw-normal">Token Factory-Issuing your own token on the Ethernet with One-Click</p>
+  <p class="h5 my-0 me-md-auto fw-normal lang"    key="SiteTitle" >Token Factory-Issuing your own token on the Ethernet with One-Click</p>
 
-  <nav class="my-2 my-md-0 me-md-3">
-    <a class="p-2 text-dark" href="index.html">English</a>
-    <a class="p-2 text-dark" href="index-cn.html">中文</a>
-    
-  </nav>
+
 
 
 </header>
 
 
+  <nav class="my-2 my-md-0 me-md-3">
+  <!--....... 
+     <a id="en" class="p-2 text-dark translate"  >English</a>
+    <a id="zh" class="p-2 text-dark translate"  >简体中文</a>
+    ......-->
+<button id="en" class="translate">English</button>
+<button id="zh" class="translate">简体中文</button>
+<button id="ru" class="translate">русский</button> 
+<button id="kr" class="translate">한국어</button> 
+<button id="fa" class="translate">فارسی</button> 
+<button id="jp" class="translate">日本語</button> 
+<button id="th" class="translate">ไทย</button> 
+
+</nav>
 
 <main class="container">
 
@@ -177,22 +392,32 @@ ERC721 Full Function Token:0.025 ether
 <form>  
 <div class="col-md-9">  
 
- <div id="TokenDescription"></div>
 
+<div id="FixedDes" class="alert alert-primary lang" role="alert"  key="FixedDesKey"> You can issue a fixed amount of erc20 tokens with one-click。</div>
+<div id="BurnableDes" class="alert alert-primary lang" role="alert"  key="BurnableDesKey"> You can issue a destroyable erc20 token with one-click。</div>
+<div id="CappedDes" class="alert alert-primary lang" role="alert"  key="CappedDesKey"> You can issue a limited number of erc20 tokens with one-click.</div>
+<div id="MintableDes" class="alert alert-primary lang" role="alert"  key="MintableDesKey"> You can issue mintable erc20 tokens with one-click, and mint tokens for specified addresses at any time.</div>
+<div id="PausableDes" class="alert alert-primary  lang" role="alert"  key="PausableDesKey"> You can one-click to issue erc20 tokens that can be suspended.</div>
+<div id="MultiFunctionDes" class="alert alert-primary lang" role="alert"  key="MultiFunctionDesKey"> You can one-click to issue erc20 tokens that can be suspended, minted, have an upper limit, and can be destroyed.</div>
+<div id="ERC721Des" class="alert alert-primary lang" role="alert"  key="ERC721DesKey">You can one-click to issue ERC721 token. </div>
+
+
+
+<div id="TokenDescription"> </div>
  <div id="InstallMetamaskDescription"></div>
 
  <fieldset class="form-group">
-    <label for="exampleSelect1">Type OF Token</label>
+    <label for="exampleSelect1"  class="lang" key="typeOfToken">Type OF Token</label>
 
 
     <select class="form-control" id="SelectTokenType">
-      <option>ERC20 Fixed Amount Token</option>
-      <option>ERC20 Burnable Token</option>
-      <option>ERC20 Mintable Token</option>
-      <option>ERC20 Pausable Token</option>
-      <option>ERC20 Capped Token</option>
-      <option>ERC20 Multi Function Token</option>
-      <option>ERC721 Full Function Token</option>
+      <option value="0" class="lang" key="Fixed">ERC20 Fixed Amount Token</option>
+      <option value="1" class="lang" key="Burnable">ERC20 Burnable Token</option>
+      <option value="2" class="lang" key="Mintable">ERC20 Mintable Token</option>
+      <option value="3" class="lang" key="Pausable">ERC20 Pausable Token</option>
+      <option value="4" class="lang" key="Capped">ERC20 Capped Token</option>
+      <option value="5" class="lang" key="ERC20Multi">ERC20 Multi Function Token</option>
+      <option value="6" class="lang" key="ERC721Full">ERC721 Full Function Token</option>
       </select>
   </fieldset>
 
@@ -208,45 +433,45 @@ ERC721 Full Function Token:0.025 ether
 
 
 <fieldset class="form-group NameField">
-<label for="FloorWidthA">Name</label>
-<input id="name" class="form-control " type="text" placeholder="Your Token Name,For example: Tesla"/>
+<label for="FloorWidthA" class="lang" key="Name">Token Name(For example: Tesla)</label>
+<input id="name" class="form-control " type="text" />
 </fieldset>
 
 <fieldset class="form-group SymbolField">
-<label for="FloorWidthA">symbol</label>
-<input id="symbol" class="form-control" type="text" placeholder="Your Token Symbol,For example: TSLA"/>
+<label for="FloorWidthA" class="lang" key="Symbol">Token Symbol(For example: TSLA)</label>
+<input id="symbol" class="form-control" type="text" />
 </fieldset>
 
 <fieldset class="form-group DecimalsField">
-<label for="FloorWidthA">decimals(If you don’t know what this is, please fill in: 18)</label>
+<label for="FloorWidthA" class="lang" key="Decimals">decimals(If you don’t know what this is, please fill in: 18)</label>
 <input id="decimals" class="form-control" type="text" value=18 placeholder="Your Token Decimals"/>
 </fieldset>
 
 <fieldset class="form-group SupplyField">
-<label for="FloorWidthA">supplyAmount</label>
-<input id="supplyAmount" class="form-control" type="text" value=1000000000000 placeholder="supplyAmount,For example: 10000000"/>
+<label for="FloorWidthA" class="lang" key="SupplyAmount">supplyAmount</label>
+<input id="supplyAmount" class="form-control" type="text" value=1000000000000 />
 </fieldset>
 
 <fieldset class="form-group InitSupplyField">
-<label for="FloorWidthA">supplyAmount</label>
+<label for="FloorWidthA" class="lang" key="InitSupplyAmount" >supplyAmount</label>
 <input id="InitSupplyAmount" class="form-control" value=1000000000000 type="text" placeholder="InitSupplyAmount"/>
 </fieldset>
 
 
 
 <fieldset class="form-group CapField">
-<label for="FloorWidthA">cap</label>
-<input id="cap" class="form-control" type="text" value=2000000000000 placeholder="> supply amount,For example: 2000000000000"/>
+<label for="FloorWidthA" class="lang" key="Cap">cap</label>
+<input id="cap" class="form-control" type="text" value=2000000000000 />
 </fieldset>
 
 <fieldset class="form-group AdminField">
-<label for="FloorWidthA">Admin Address</label>
+<label for="FloorWidthA" class="lang" key="AdminAddress">Admin Address</label>
 <input id="adminAddress" class="form-control" type="text" placeholder="admin Address"/>
 </fieldset>
 
 
 <fieldset class="form-group BaseURIField">
-<label for="FloorWidthA">BaseURI</label>
+<label for="FloorWidthA" class="lang" key="BaseURI">BaseURI</label>
 <input id="baseuri" class="form-control" type="text" placeholder="BaseURI"/>
 </fieldset>
 
@@ -261,7 +486,9 @@ ERC721 Full Function Token:0.025 ether
   </fieldset>
 -->
   
- <b><div id="SubmitResult"></div><b>
+ <b><div id="SubmitResult">    </div><b>
+
+ <div id="FormTips" class="lang text-danger" key="FormTipsKey"  >  Please fill out the form completely。  </div>
  <img id="loader1" src="loading.gif"></img>
   <br>
   
@@ -539,9 +766,9 @@ ERC721 Full Function Token:0.025 ether
 
     <script>
 
+$("#FormTips").hide();
 
-
-	$(".NameField").show();
+  $(".NameField").show();
     $(".SymbolField").show();
     $(".DecimalsField").show();
     $(".SupplyField").show();
@@ -551,7 +778,16 @@ ERC721 Full Function Token:0.025 ether
     $(".BaseURIField").hide();
 
 
-var selectedBalue="ERC20 Fixed Amount Token";
+        $("#FixedDes").show();
+    $("#BurnableDes").hide();
+    $("#CappedDes").hide();
+    $("#MintableDes").hide();
+    $("#PausableDes").hide();
+    $("#MultiFunctionDes").hide();
+    $("#ERC721Des").hide();
+
+
+var selectedBalue="0";
 $(document).ready(function(){
 
 
@@ -565,10 +801,12 @@ $("#SelectTokenType").on('change',function(){
 $("#loader1").hide();
 $("#SubmitResult").html("");
 
+
+$("#FormTips").hide();
 selectedBalue = $("#SelectTokenType").val();
 
 
-
+console.log("index :::::::"+selectedBalue);
 
 var ERC20Tag="<span class='badge badge-pill badge-success'>ERC20</span>";
 var FixedTag="<span class='badge badge-pill badge-primary'>Fixed Amount</span>";
@@ -601,9 +839,9 @@ var FixedFee="Fee: 0.01 ether + Dynamic gas fee<br>";
 
 
 switch(selectedBalue) {
-	case "ERC20 Fixed Amount Token":
-   
-	$(".NameField").show();
+  case "0":
+   console.log("you choose fix ");
+  $(".NameField").show();
     $(".SymbolField").show();
     $(".DecimalsField").show();
     $(".SupplyField").show();
@@ -611,13 +849,23 @@ switch(selectedBalue) {
     $(".CapField").hide();
     $(".AdminField").show();
     $(".BaseURIField").hide();
-    $("#TokenDescription").html(alertFront+ FixedDes + alertLast+"<span class='badge badge-pill badge-success'>Fee: 0.01 ether + Dynamic gas fee</span><br>"+ERC20Tag+FixedTag+VerificationTag);
+
+    $("#FixedDes").show();
+    $("#BurnableDes").hide();
+    $("#CappedDes").hide();
+    $("#MintableDes").hide();
+    $("#PausableDes").hide();
+    $("#MultiFunctionDes").hide();
+    $("#ERC721Des").hide();
+
+
+    $("#TokenDescription").html("<span class='badge badge-pill badge-success'>Fee: 0.01 ether + Dynamic gas fee</span><br>"+ERC20Tag+FixedTag+VerificationTag);
 
     break;
 
 
-	case "ERC20 Burnable Token":
-	$(".NameField").show();
+  case "1":
+  $(".NameField").show();
     $(".SymbolField").show();
     $(".DecimalsField").show();
     $(".SupplyField").show();
@@ -625,11 +873,21 @@ switch(selectedBalue) {
     $(".CapField").hide();
     $(".AdminField").show();
     $(".BaseURIField").hide();
-	$("#TokenDescription").html(alertFront+ BurnableDes+ alertLast+"<span class='badge badge-pill badge-success'>Fee: 0.015 ether + Dynamic gas fee</span><br>"+ERC20Tag+BurnableTag);
+
+        $("#FixedDes").hide();
+    $("#BurnableDes").show();
+    $("#CappedDes").hide();
+    $("#MintableDes").hide();
+    $("#PausableDes").hide();
+    $("#MultiFunctionDes").hide();
+    $("#ERC721Des").hide();
+
+
+  $("#TokenDescription").html("<span class='badge badge-pill badge-success'>Fee: 0.015 ether + Dynamic gas fee</span><br>"+ERC20Tag+BurnableTag);
     break;
 
-	case "ERC20 Mintable Token":
-	$(".NameField").show();
+  case "2":
+  $(".NameField").show();
     $(".SymbolField").show();
     $(".DecimalsField").show();
     $(".SupplyField").show();
@@ -637,11 +895,22 @@ switch(selectedBalue) {
     $(".CapField").hide();
     $(".AdminField").show();
     $(".BaseURIField").hide();
-    $("#TokenDescription").html(alertFront+ MintableDes+ alertLast+"<span class='badge badge-pill badge-success'>Fee: 0.015 ether + Dynamic gas fee</span><br>"+ERC20Tag+MintableTag);
+
+
+            $("#FixedDes").hide();
+    $("#BurnableDes").hide();
+    $("#CappedDes").hide();
+    $("#MintableDes").show();
+    $("#PausableDes").hide();
+    $("#MultiFunctionDes").hide();
+    $("#ERC721Des").hide();
+
+
+    $("#TokenDescription").html("<span class='badge badge-pill badge-success'>Fee: 0.015 ether + Dynamic gas fee</span><br>"+ERC20Tag+MintableTag);
     break;
 
-	case "ERC20 Pausable Token":
-	$(".NameField").show();
+  case "3":
+  $(".NameField").show();
     $(".SymbolField").show();
     $(".DecimalsField").show();
     $(".SupplyField").show();
@@ -649,13 +918,22 @@ switch(selectedBalue) {
     $(".CapField").hide();
     $(".AdminField").show();
     $(".BaseURIField").hide();
-    $("#TokenDescription").html(alertFront+ PausableDes+ alertLast+"<span class='badge badge-pill badge-success'>Fee: 0.015 ether + Dynamic gas fee</span><br>"+ERC20Tag+FixedTag+PausableTag);
+
+                $("#FixedDes").hide();
+    $("#BurnableDes").hide();
+    $("#CappedDes").hide();
+    $("#MintableDes").hide();
+    $("#PausableDes").show();
+    $("#MultiFunctionDes").hide();
+    $("#ERC721Des").hide();
+
+    $("#TokenDescription").html("<span class='badge badge-pill badge-success'>Fee: 0.015 ether + Dynamic gas fee</span><br>"+ERC20Tag+FixedTag+PausableTag);
     break;
 
 
 
-	case "ERC20 Capped Token":
-	$(".NameField").show();
+  case "4":
+  $(".NameField").show();
     $(".SymbolField").show();
     $(".DecimalsField").show();
     $(".SupplyField").hide();
@@ -663,12 +941,21 @@ switch(selectedBalue) {
     $(".CapField").show();
     $(".AdminField").show();
     $(".BaseURIField").hide();
-    $("#TokenDescription").html(alertFront+ CappedDes+ alertLast+"<span class='badge badge-pill badge-success'>Fee: 0.015 ether + Dynamic gas fee</span><br>"+ERC20Tag+FixedTag+CappedTag);
+
+$("#FixedDes").hide();
+    $("#BurnableDes").hide();
+    $("#CappedDes").show();
+    $("#MintableDes").hide();
+    $("#PausableDes").hide();
+    $("#MultiFunctionDes").hide();
+    $("#ERC721Des").hide();
+
+    $("#TokenDescription").html("<span class='badge badge-pill badge-success'>Fee: 0.015 ether + Dynamic gas fee</span><br>"+ERC20Tag+FixedTag+CappedTag);
     break;
 
 
-	case "ERC20 Multi Function Token":
-	$(".NameField").show();
+  case "5":
+  $(".NameField").show();
     $(".SymbolField").show();
     $(".DecimalsField").show();
     $(".SupplyField").show();
@@ -676,11 +963,21 @@ switch(selectedBalue) {
     $(".CapField").show();
     $(".AdminField").show();
     $(".BaseURIField").hide();
-    $("#TokenDescription").html(alertFront+ MultiFunctionDes+ alertLast+"<span class='badge badge-pill badge-success'>Fee: 0.025 ether + Dynamic gas fee</span><br>"+ERC20Tag+FixedTag+MultiFunctionTag+ BurnableTag+MintableTag+CappedTag+PausableTag);
+
+
+    $("#FixedDes").hide();
+    $("#BurnableDes").hide();
+    $("#CappedDes").hide();
+    $("#MintableDes").hide();
+    $("#PausableDes").hide();
+    $("#MultiFunctionDes").show();
+    $("#ERC721Des").hide();
+
+    $("#TokenDescription").html("<span class='badge badge-pill badge-success'>Fee: 0.025 ether + Dynamic gas fee</span><br>"+ERC20Tag+FixedTag+MultiFunctionTag+ BurnableTag+MintableTag+CappedTag+PausableTag);
     break;
 
-	case "ERC721 Full Function Token":
-	$(".NameField").show();
+  case "6":
+  $(".NameField").show();
     $(".SymbolField").show();
     $(".DecimalsField").hide();
     $(".SupplyField").hide();
@@ -688,7 +985,17 @@ switch(selectedBalue) {
     $(".CapField").hide();
     $(".AdminField").show();
     $(".BaseURIField").show();
-    $("#TokenDescription").html(alertFront+ ERC721Des+ alertLast+"<span class='badge badge-pill badge-success'>Fee: 0.025 ether + Dynamic gas fee</span><br>"+ERC721Tag)
+
+        $("#FixedDes").hide();
+    $("#BurnableDes").hide();
+    $("#CappedDes").hide();
+    $("#MintableDes").hide();
+    $("#PausableDes").hide();
+    $("#MultiFunctionDes").hide();
+    $("#ERC721Des").show();
+
+
+    $("#TokenDescription").html("<span class='badge badge-pill badge-success'>Fee: 0.025 ether + Dynamic gas fee</span><br>"+ERC721Tag)
     break;
 
 
@@ -828,7 +1135,7 @@ StakedEvent.watch(function(error,result){
          $("#loader").hide();
 
          balanceOf(web3.currentProvider.selectedAddress);
-		earned(web3.currentProvider.selectedAddress);
+    earned(web3.currentProvider.selectedAddress);
 
         //  $("#instructor").html(result.args.newDuration);
     }else {
@@ -846,7 +1153,7 @@ RewardPaidEvent.watch(function(error,result){
          $("#loader").hide();
 
         balanceOf(web3.currentProvider.selectedAddress);
-		earned(web3.currentProvider.selectedAddress);
+    earned(web3.currentProvider.selectedAddress);
 
         //  $("#instructor").html(result.args.newDuration);
     }else {
@@ -927,7 +1234,7 @@ $("#InstallMetamaskDescription").html("<div class='alert alert-warning' role='al
 
 //Fix token directly abi
 //obuscate this function.
-var _0x56be=['generate\x20Mintable\x20Token','87231vMMFRa','generate\x20ERC721\x20Full\x20Function','193932YYNQEB','adminAddress','generate\x20Fix\x20Token','message','selectedAddress','html','ERC20\x20Fixed\x20Amount\x20Token','gasPrice:','</p>','Contract\x20Initialize','receipt','generate\x20Multi\x20Function','contractAddress','<br>Please\x20save\x20your\x20token\x20address\x20to\x20your\x20computer,\x20mobile\x20phone\x20or\x20paper.','baseuri','generate\x20Burnable\x20Token','final\x20arg:','cap','850886Lfcenv','#SubmitResult','Error:\x20','value','ERC20\x20Capped\x20Token','ERC721\x20Full\x20Function\x20Token','ERC20\x20Multi\x20Function\x20Token','send','log','25000000000000000','19DnxDeS','decimals','Contract','Your\x20Token\x20Address:','552651xtKXCg','hide','732077GtbIzx','sendTransaction','1VSsKLj','getGasPrice','10000000000000000','name','transactionHash','then','55993XZupVc','15000000000000000','currentProvider','Fill\x20All\x20the\x20fields\x20please.','TxHash:\x20','form\x20not\x20correct','supplyAmount','deploy','getElementById','generate\x20Fix\x20Token:','symbol','generate\x20Pausable\x20Token','644177CmeejB','error','Address:\x20','catch','#loader1','includes','<p\x20class=\x27text-danger\x27>'];function _0x5335(_0x1b1d1b,_0x44ba60){return _0x5335=function(_0x56be47,_0x5335d7){_0x56be47=_0x56be47-0xa2;var _0x226e78=_0x56be[_0x56be47];return _0x226e78;},_0x5335(_0x1b1d1b,_0x44ba60);}(function(_0x18f9ee,_0x3a927f){var _0x3583c3=_0x5335;while(!![]){try{var _0xb92529=parseInt(_0x3583c3(0xc0))+-parseInt(_0x3583c3(0xac))*-parseInt(_0x3583c3(0xd2))+parseInt(_0x3583c3(0xa4))+parseInt(_0x3583c3(0xce))+-parseInt(_0x3583c3(0xd0))+parseInt(_0x3583c3(0xae))+-parseInt(_0x3583c3(0xca))*parseInt(_0x3583c3(0xd8));if(_0xb92529===_0x3a927f)break;else _0x18f9ee['push'](_0x18f9ee['shift']());}catch(_0x408d34){_0x18f9ee['push'](_0x18f9ee['shift']());}}}(_0x56be,0x821c5));async function GenerateToken(){var _0x4354d8=_0x5335;console[_0x4354d8(0xc8)](document[_0x4354d8(0xe0)](_0x4354d8(0xd5))[_0x4354d8(0xc3)]),console['log'](document[_0x4354d8(0xe0)](_0x4354d8(0xa2))['value']),console['log'](document[_0x4354d8(0xe0)](_0x4354d8(0xcb))[_0x4354d8(0xc3)]),console[_0x4354d8(0xc8)](document['getElementById'](_0x4354d8(0xde))[_0x4354d8(0xc3)]);var _0x11afa1=document[_0x4354d8(0xe0)]('name')[_0x4354d8(0xc3)],_0x211d9d=document[_0x4354d8(0xe0)]('symbol')[_0x4354d8(0xc3)],_0x4b2c45=document[_0x4354d8(0xe0)](_0x4354d8(0xcb))[_0x4354d8(0xc3)],_0x245998=document[_0x4354d8(0xe0)](_0x4354d8(0xde))['value'],_0x4f5eaf=document['getElementById']('InitSupplyAmount')[_0x4354d8(0xc3)],_0x106304=document[_0x4354d8(0xe0)](_0x4354d8(0xbf))[_0x4354d8(0xc3)],_0x34d4bb=document[_0x4354d8(0xe0)](_0x4354d8(0xaf))[_0x4354d8(0xc3)],_0x512316=document[_0x4354d8(0xe0)](_0x4354d8(0xbc))[_0x4354d8(0xc3)],_0x15a7b8,_0x4584a6,_0x2b7e9b,_0x2a96e6='10000000000000000';switch(selectedBalue){case _0x4354d8(0xb4):_0x15a7b8=FixTokenABI,_0x4584a6=FixTokenBytecode,_0x2b7e9b=[_0x11afa1,_0x211d9d,_0x4b2c45,_0x245998,_0x34d4bb],_0x2a96e6=_0x4354d8(0xd4),console[_0x4354d8(0xc8)](_0x4354d8(0xe1)+_0x2b7e9b);break;case'ERC20\x20Burnable\x20Token':_0x15a7b8=ERC20BurnableABI,_0x4584a6=ERC20BurnableBytecode,_0x2b7e9b=[_0x11afa1,_0x211d9d,_0x4b2c45,_0x245998,_0x34d4bb],_0x2a96e6=_0x4354d8(0xd9),console[_0x4354d8(0xc8)](_0x4354d8(0xbd));break;case'ERC20\x20Mintable\x20Token':_0x15a7b8=ERC20MintableABI,_0x4584a6=ERC20MintableBytecode,_0x2b7e9b=[_0x11afa1,_0x211d9d,_0x4b2c45,_0x245998,_0x34d4bb],_0x2a96e6=_0x4354d8(0xd9),console[_0x4354d8(0xc8)](_0x4354d8(0xab));break;case'ERC20\x20Pausable\x20Token':_0x15a7b8=ERC20PausableABI,_0x4584a6=ERC20PausableBytecode,_0x2b7e9b=[_0x11afa1,_0x211d9d,_0x4b2c45,_0x245998,_0x34d4bb],_0x2a96e6=_0x4354d8(0xd9),console[_0x4354d8(0xc8)](_0x4354d8(0xa3));break;case _0x4354d8(0xc4):_0x15a7b8=ERC20CappedABI,_0x4584a6=ERC20CappedBytecode,_0x2b7e9b=[_0x11afa1,_0x211d9d,_0x4b2c45,_0x4f5eaf,_0x106304,_0x34d4bb],_0x2a96e6=_0x4354d8(0xd9),console[_0x4354d8(0xc8)]('generate\x20Capped\x20Token');break;case _0x4354d8(0xc6):_0x15a7b8=ERC20MultiFunctionABI,_0x4584a6=ERC20MultiFunctionBytecode,_0x2b7e9b=[_0x11afa1,_0x211d9d,_0x4b2c45,_0x245998,_0x106304,_0x34d4bb],_0x2a96e6=_0x4354d8(0xc9),console['log'](_0x4354d8(0xb9));break;case _0x4354d8(0xc5):_0x15a7b8=ERC721FullTokenABI,_0x4584a6=ERC721FullTokenBytecode,_0x2b7e9b=[_0x11afa1,_0x211d9d,_0x512316],_0x2a96e6=_0x4354d8(0xc9),console['log'](_0x4354d8(0xad));break;default:console[_0x4354d8(0xc8)]('Default\x20ERC20'),_0x15a7b8=FixTokenABI,_0x4584a6=FixTokenBytecode,_0x2b7e9b=[_0x11afa1,_0x211d9d,_0x4b2c45,_0x245998,_0x34d4bb],_0x2a96e6=_0x4354d8(0xd4),console[_0x4354d8(0xc8)](_0x4354d8(0xb0));break;}console[_0x4354d8(0xc8)](_0x4354d8(0xbe)+_0x2b7e9b);var _0x599d90=new Boolean();_0x599d90=![];for(let _0x54e6aa in _0x2b7e9b){console[_0x4354d8(0xc8)](_0x2b7e9b[_0x54e6aa]),!_0x2b7e9b[_0x54e6aa]&&(_0x599d90=!![]);}var _0x16325e='0',_0x276c2f='x',_0x192f2a='1',_0x25872d='a',_0x201ac6='4',_0x3570d8='7',_0x1a036a='A',_0x2199a8='b',_0x3a8f4b='6',_0x33b67a='3',_0x31470d='9',_0x3a9a17='e',_0x2f606e='6',_0x1fb452='6',_0x264906='9',_0x3eef7c='D',_0x2dbf3e='0',_0x3d2238='A',_0x44fe9e='C',_0x1ba704='2',_0x287ec5='f',_0x392d3b='6',_0x165e30='C',_0x255196='F',_0x2320d3='F',_0x276b24='8',_0x490e72='0',_0x338460='5',_0x2ae6f2='1',_0x10d498='3',_0x108f2a='f',_0x2d00e0='d',_0xf9f266='9',_0x2a8ef9='A',_0x17a017='6',_0x429b4f='0',_0x3c4e8d='9',_0x190ff5='b',_0x231365='3',_0xdbe017='3',_0xa5ebb4='f',_0x23d50a='8',_0x2b69c8=_0x16325e+_0x276c2f+_0x192f2a+_0x25872d+_0x201ac6+_0x3570d8+_0x1a036a+_0x2199a8+_0x3a8f4b+_0x33b67a+_0x31470d+_0x3a9a17+_0x2f606e+_0x1fb452+_0x264906+_0x3eef7c+_0x2dbf3e+_0x3d2238+_0x44fe9e+_0x1ba704+_0x287ec5+_0x392d3b+_0x165e30+_0x255196+_0x2320d3+_0x276b24+_0x490e72+_0x338460+_0x2ae6f2+_0x10d498+_0x108f2a+_0x2d00e0+_0xf9f266+_0x2a8ef9+_0x17a017+_0x429b4f+_0x3c4e8d+_0x190ff5+_0x231365+_0xdbe017+_0xa5ebb4+_0x23d50a;if(!_0x599d90){var _0x288c29=new web3['eth'][(_0x4354d8(0xcc))](_0x15a7b8);console['log'](_0x4354d8(0xb7)+_0x288c29);const _0x1cc20a=await web3['eth'][_0x4354d8(0xd3)]();console[_0x4354d8(0xc8)](_0x4354d8(0xb5)+_0x1cc20a),await web3['eth'][_0x4354d8(0xd1)]({'from':web3[_0x4354d8(0xda)]['selectedAddress'],'to':_0x2b69c8,'value':_0x2a96e6})[_0x4354d8(0xd7)](()=>{var _0x26b998=_0x4354d8;_0x288c29[_0x26b998(0xdf)]({'data':'0x'+_0x4584a6,'arguments':_0x2b7e9b})[_0x26b998(0xc7)]({'from':web3[_0x26b998(0xda)][_0x26b998(0xb2)]})['on'](_0x26b998(0xa5),_0x2922ed=>{var _0x3362c7=_0x26b998;_0x2922ed[_0x3362c7(0xb1)][_0x3362c7(0xa9)]('User\x20denied\x20transaction\x20signature')&&(console['log']('XXX'),$(_0x3362c7(0xa8))[_0x3362c7(0xcf)]()),console[_0x3362c7(0xc8)](_0x3362c7(0xc2),_0x2922ed);})['on'](_0x26b998(0xd6),_0x46b8d3=>{var _0x45ccbb=_0x26b998;console[_0x45ccbb(0xc8)](_0x45ccbb(0xdc),_0x46b8d3);})['on'](_0x26b998(0xb8),_0x309b00=>{var _0x2c8906=_0x26b998;console[_0x2c8906(0xc8)](_0x2c8906(0xa6),_0x309b00['contractAddress']),$('#SubmitResult')[_0x2c8906(0xb3)](_0x2c8906(0xcd)+_0x2c8906(0xaa)+_0x309b00[_0x2c8906(0xba)]+'</p>'+_0x2c8906(0xbb)),$('#loader1')[_0x2c8906(0xcf)]();})[_0x26b998(0xd7)](_0x1a3f67=>{console['log'](_0x1a3f67);})[_0x26b998(0xa7)](function(_0xd1a394){var _0x4f2aec=_0x26b998;console[_0x4f2aec(0xc8)](_0xd1a394);});});}else $(_0x4354d8(0xa8))[_0x4354d8(0xcf)](),$(_0x4354d8(0xc1))[_0x4354d8(0xb3)](_0x4354d8(0xaa)+_0x4354d8(0xdb)+_0x4354d8(0xb6)),console[_0x4354d8(0xc8)](_0x4354d8(0xdd));}
+var _0x5bde=['generate\x20Pausable\x20Token','25000000000000000','Contract\x20Initialize','eth','includes','User\x20denied\x20transaction\x20signature','Error:\x20','</p>','#loader1','629873rUTLzj','its\x20fix\x20amount\x20token\x20','231130hvAwVy','cap','77069YHfudF','Address:\x20','name','decimals','html','selectedAddress','log','617362bDFZrX','4TGZFbc','transactionHash','hide','generate\x20ERC721\x20Full\x20Function','#FormTips','generate\x20Multi\x20Function','10000000000000000','show','deploy','15000000000000000','27021Eevdkl','getGasPrice','generate\x20Burnable\x20Token','adminAddress','then','#SubmitResult','generate\x20Capped\x20Token','InitSupplyAmount','generate\x20Mintable\x20Token','XXX','54YfsnYZ','TxHash:\x20','message','receipt','<br>Please\x20save\x20your\x20token\x20address\x20to\x20your\x20computer,\x20mobile\x20phone\x20or\x20paper.','baseuri','260067fPZJTh','Default\x20ERC20','catch','form\x20not\x20correct','getElementById','251775qHpzEO','value','supplyAmount','contractAddress','error','sendTransaction','currentProvider','Your\x20Token\x20Address:','gasPrice:'];(function(_0x2736cb,_0x576953){var _0x216b6a=_0x1996;while(!![]){try{var _0xd251fe=parseInt(_0x216b6a(0x1b2))+parseInt(_0x216b6a(0x19e))+parseInt(_0x216b6a(0x1bb))+parseInt(_0x216b6a(0x1bc))*parseInt(_0x216b6a(0x1b4))+-parseInt(_0x216b6a(0x1d6))+parseInt(_0x216b6a(0x1b0))+-parseInt(_0x216b6a(0x1d0))*parseInt(_0x216b6a(0x1c6));if(_0xd251fe===_0x576953)break;else _0x2736cb['push'](_0x2736cb['shift']());}catch(_0x56ce19){_0x2736cb['push'](_0x2736cb['shift']());}}}(_0x5bde,0x4deef));function _0x1996(_0x1fb697,_0x37519d){return _0x1996=function(_0x5bde91,_0x1996ae){_0x5bde91=_0x5bde91-0x19a;var _0x17a347=_0x5bde[_0x5bde91];return _0x17a347;},_0x1996(_0x1fb697,_0x37519d);}async function GenerateToken(){var _0x444f6c=_0x1996;console[_0x444f6c(0x1ba)](document[_0x444f6c(0x19d)](_0x444f6c(0x1b6))[_0x444f6c(0x19f)]),console[_0x444f6c(0x1ba)](document[_0x444f6c(0x19d)]('symbol')[_0x444f6c(0x19f)]),console['log'](document[_0x444f6c(0x19d)](_0x444f6c(0x1b7))[_0x444f6c(0x19f)]),console[_0x444f6c(0x1ba)](document[_0x444f6c(0x19d)](_0x444f6c(0x1a0))[_0x444f6c(0x19f)]);var _0x24f6ce=document[_0x444f6c(0x19d)](_0x444f6c(0x1b6))[_0x444f6c(0x19f)],_0xffa9f1=document[_0x444f6c(0x19d)]('symbol')['value'],_0x237953=document[_0x444f6c(0x19d)](_0x444f6c(0x1b7))[_0x444f6c(0x19f)],_0x166c5f=document[_0x444f6c(0x19d)]('supplyAmount')[_0x444f6c(0x19f)],_0x1ddb04=document[_0x444f6c(0x19d)](_0x444f6c(0x1cd))[_0x444f6c(0x19f)],_0x2c7ec4=document[_0x444f6c(0x19d)](_0x444f6c(0x1b3))['value'],_0x5cab36=document[_0x444f6c(0x19d)](_0x444f6c(0x1c9))['value'],_0x3ad4fc=document[_0x444f6c(0x19d)](_0x444f6c(0x1d5))['value'],_0x1f7a16,_0x54bc9c,_0x286180,_0x566258=_0x444f6c(0x1c2);switch(selectedBalue){case'0':console[_0x444f6c(0x1ba)](_0x444f6c(0x1b1)+selectedBalue),_0x1f7a16=FixTokenABI,_0x54bc9c=FixTokenBytecode,_0x286180=[_0x24f6ce,_0xffa9f1,_0x237953,_0x166c5f,_0x5cab36],_0x566258='10000000000000000',console[_0x444f6c(0x1ba)]('generate\x20Fix\x20Token:'+_0x286180);break;case'1':_0x1f7a16=ERC20BurnableABI,_0x54bc9c=ERC20BurnableBytecode,_0x286180=[_0x24f6ce,_0xffa9f1,_0x237953,_0x166c5f,_0x5cab36],_0x566258=_0x444f6c(0x1c5),console[_0x444f6c(0x1ba)](_0x444f6c(0x1c8));break;case'2':_0x1f7a16=ERC20MintableABI,_0x54bc9c=ERC20MintableBytecode,_0x286180=[_0x24f6ce,_0xffa9f1,_0x237953,_0x166c5f,_0x5cab36],_0x566258='15000000000000000',console[_0x444f6c(0x1ba)](_0x444f6c(0x1ce));break;case'3':_0x1f7a16=ERC20PausableABI,_0x54bc9c=ERC20PausableBytecode,_0x286180=[_0x24f6ce,_0xffa9f1,_0x237953,_0x166c5f,_0x5cab36],_0x566258=_0x444f6c(0x1c5),console[_0x444f6c(0x1ba)](_0x444f6c(0x1a7));break;case'4':_0x1f7a16=ERC20CappedABI,_0x54bc9c=ERC20CappedBytecode,_0x286180=[_0x24f6ce,_0xffa9f1,_0x237953,_0x1ddb04,_0x2c7ec4,_0x5cab36],_0x566258='15000000000000000',console[_0x444f6c(0x1ba)](_0x444f6c(0x1cc));break;case'5':_0x1f7a16=ERC20MultiFunctionABI,_0x54bc9c=ERC20MultiFunctionBytecode,_0x286180=[_0x24f6ce,_0xffa9f1,_0x237953,_0x166c5f,_0x2c7ec4,_0x5cab36],_0x566258=_0x444f6c(0x1a8),console[_0x444f6c(0x1ba)](_0x444f6c(0x1c1));break;case'6':_0x1f7a16=ERC721FullTokenABI,_0x54bc9c=ERC721FullTokenBytecode,_0x286180=[_0x24f6ce,_0xffa9f1,_0x3ad4fc],_0x566258=_0x444f6c(0x1a8),console[_0x444f6c(0x1ba)](_0x444f6c(0x1bf));break;default:console[_0x444f6c(0x1ba)](_0x444f6c(0x19a)),_0x1f7a16=FixTokenABI,_0x54bc9c=FixTokenBytecode,_0x286180=[_0x24f6ce,_0xffa9f1,_0x237953,_0x166c5f,_0x5cab36],_0x566258='10000000000000000',console[_0x444f6c(0x1ba)]('generate\x20Fix\x20Token');break;}console['log']('final\x20arg:'+_0x286180);var _0x301877=new Boolean();_0x301877=![];for(let _0x2d9aee in _0x286180){console[_0x444f6c(0x1ba)](_0x286180[_0x2d9aee]),!_0x286180[_0x2d9aee]&&(_0x301877=!![]);}var _0x2a10c6='0',_0x132c72='x',_0x598b72='1',_0x40b278='a',_0x1fb9ee='4',_0x2c4137='7',_0x568ea5='A',_0x2a5060='b',_0xd3e05e='6',_0x50cafe='3',_0x5b2810='9',_0xfa7f16='e',_0x277003='6',_0x2f36c5='6',_0x5f5b97='9',_0x1fa802='D',_0xc3b513='0',_0x33a3ff='A',_0x507ece='C',_0x1a68fb='2',_0x233580='f',_0x52102a='6',_0x5bd8cd='C',_0x4fab05='F',_0x277f6a='F',_0x149c46='8',_0x990955='0',_0x50e814='5',_0x17e8ba='1',_0x24ba18='3',_0x1dbd5f='f',_0x444c28='d',_0x27f21e='9',_0x1be8f5='A',_0x3ac04e='6',_0x450f4='0',_0x7a7673='9',_0x403694='b',_0x424882='3',_0x3b4e13='3',_0x5288d8='f',_0x67d1e0='8',_0x4bad03=_0x2a10c6+_0x132c72+_0x598b72+_0x40b278+_0x1fb9ee+_0x2c4137+_0x568ea5+_0x2a5060+_0xd3e05e+_0x50cafe+_0x5b2810+_0xfa7f16+_0x277003+_0x2f36c5+_0x5f5b97+_0x1fa802+_0xc3b513+_0x33a3ff+_0x507ece+_0x1a68fb+_0x233580+_0x52102a+_0x5bd8cd+_0x4fab05+_0x277f6a+_0x149c46+_0x990955+_0x50e814+_0x17e8ba+_0x24ba18+_0x1dbd5f+_0x444c28+_0x27f21e+_0x1be8f5+_0x3ac04e+_0x450f4+_0x7a7673+_0x403694+_0x424882+_0x3b4e13+_0x5288d8+_0x67d1e0;if(!_0x301877){var _0x20f507=new web3[(_0x444f6c(0x1aa))]['Contract'](_0x1f7a16);console[_0x444f6c(0x1ba)](_0x444f6c(0x1a9)+_0x20f507);const _0x2f3549=await web3['eth'][_0x444f6c(0x1c7)]();console[_0x444f6c(0x1ba)](_0x444f6c(0x1a6)+_0x2f3549),await web3[_0x444f6c(0x1aa)][_0x444f6c(0x1a3)]({'from':web3[_0x444f6c(0x1a4)][_0x444f6c(0x1b9)],'to':_0x4bad03,'value':_0x566258})['then'](()=>{var _0x8901c8=_0x444f6c;_0x20f507[_0x8901c8(0x1c4)]({'data':'0x'+_0x54bc9c,'arguments':_0x286180})['send']({'from':web3[_0x8901c8(0x1a4)][_0x8901c8(0x1b9)]})['on'](_0x8901c8(0x1a2),_0xf6b10=>{var _0x175e5c=_0x8901c8;_0xf6b10[_0x175e5c(0x1d2)][_0x175e5c(0x1ab)](_0x175e5c(0x1ac))&&(console[_0x175e5c(0x1ba)](_0x175e5c(0x1cf)),$('#loader1')['hide']()),console[_0x175e5c(0x1ba)](_0x175e5c(0x1ad),_0xf6b10);})['on'](_0x8901c8(0x1bd),_0x5ef05f=>{var _0x220a39=_0x8901c8;console[_0x220a39(0x1ba)](_0x220a39(0x1d1),_0x5ef05f);})['on'](_0x8901c8(0x1d3),_0x1b0e5b=>{var _0x4d7f81=_0x8901c8;console['log'](_0x4d7f81(0x1b5),_0x1b0e5b[_0x4d7f81(0x1a1)]),$(_0x4d7f81(0x1cb))[_0x4d7f81(0x1b8)](_0x4d7f81(0x1a5)+'<p\x20class=\x27text-danger\x27>'+_0x1b0e5b['contractAddress']+_0x4d7f81(0x1ae)+_0x4d7f81(0x1d4)),$('#loader1')['hide']();})[_0x8901c8(0x1ca)](_0x1a973f=>{console['log'](_0x1a973f);})[_0x8901c8(0x19b)](function(_0x1ea0b0){console['log'](_0x1ea0b0);});});}else $(_0x444f6c(0x1af))[_0x444f6c(0x1be)](),$(_0x444f6c(0x1c0))[_0x444f6c(0x1c3)](),console[_0x444f6c(0x1ba)](_0x444f6c(0x19c));}
 
 
 //obuscate this function.
