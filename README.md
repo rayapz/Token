@@ -1,6 +1,6 @@
 # TokenFactory
 Issuing your own token on the Ethernet with One-Click.
-Support Mintable,Pausable,Capped,Burnable , multi Function ERC20 Tokens and ERC721 token.
+Support Mintable,Pausable,Capped,Burnable , multi Function ERC20 Tokens ,USDT Template and ERC721 token.
 
 Support Language:
 
