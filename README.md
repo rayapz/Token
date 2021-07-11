@@ -1,6 +1,8 @@
 # TokenFactory
-Issuing your own token on the Ethernet with One-Click.
+Issuing your own token on the Ethereum and Binance Chain with One-Click.
 Support Mintable,Pausable,Capped,Burnable , multi Function ERC20 Tokens ,USDT Template and ERC721 token.
+
+Support Ethereum and Binance Chain.<br>
 
 イーサリアムERC20トークンのワンクリック発行<br>
 การออกโทเค็น Ethereum ERC20 เพียงคลิกเดียว<br>
