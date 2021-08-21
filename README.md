@@ -2,7 +2,9 @@
 Issuing your own token on the Ethereum and Binance Chain with One-Click.
 Support Mintable,Pausable,Capped,Burnable , multi Function ERC20 Tokens ,USDT Template and ERC721 token.
 
-Support Ethereum and Binance Chain.<br>
+You can deploy these token to any Ethereum Virtual Machine Blockchain, like: Ethereum,Binance,Polygon,Fantom...<br>
+And you could also deploy these token to any test network,like: Ropsten,Kovan,Binance testnet... <br>
+ 
 
 イーサリアムERC20トークンのワンクリック発行<br>
 การออกโทเค็น Ethereum ERC20 เพียงคลิกเดียว<br>
