@@ -5,6 +5,11 @@ Support Mintable,Pausable,Capped,Burnable , multi Function ERC20 Tokens ,USDT Te
 You can deploy these token to any Ethereum Virtual Machine Blockchain, like: Ethereum,Binance,Polygon,Fantom...<br>
 And you could also deploy these token to any test network,like: Ropsten,Kovan,Binance testnet... <br>
  
+Tutorial Video:<br>
+https://youtu.be/37eDqbnDKhI
+<br>
+
+
 
 イーサリアムERC20トークンのワンクリック発行<br>
 การออกโทเค็น Ethereum ERC20 เพียงคลิกเดียว<br>
