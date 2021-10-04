@@ -9,6 +9,9 @@ Tutorial Video:<br>
 https://youtu.be/37eDqbnDKhI
 <br>
 
+GIF Tutorial:<br>
+https://github.com/AlgoNetwork/TokenFactory/raw/main/GenerateToken.gif
+<br>
 
 
 イーサリアムERC20トークンのワンクリック発行<br>
