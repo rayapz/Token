@@ -13,6 +13,8 @@ GIF Tutorial:<br>
 https://github.com/AlgoNetwork/TokenFactory/raw/main/GenerateToken.gif
 <br>
 
+Support network:
+https://algonetwork.github.io/EVM-Blockchain-Index/
 
 イーサリアムERC20トークンのワンクリック発行<br>
 การออกโทเค็น Ethereum ERC20 เพียงคลิกเดียว<br>
