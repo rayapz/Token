@@ -2,7 +2,7 @@
 Issuing your own token on the Ethereum and Binance Chain with One-Click.
 Support Mintable,Pausable,Capped,Burnable , multi Function ERC20 Tokens ,USDT Template and ERC721 token.
 
-You can deploy these token to any Ethereum Virtual Machine Blockchain, like: Ethereum,Binance,Polygon,Fantom,0xDai,Avalanche,Thundercore,heco...<br>
+You can deploy these token to any Ethereum Virtual Machine Blockchain, like: Ethereum,Binance,Polygon,Fantom,0xDai,Avalanche,Thundercore,heco,avax...<br>
 And you could also deploy these token to any test network,like: Ropsten,Kovan,Binance testnet... <br>
  
 Tutorial Video:<br>
