@@ -5,15 +5,15 @@ Support Mintable,Pausable,Capped,Burnable , multi Function ERC20 Tokens ,USDT Te
 You can deploy these token to any Ethereum Virtual Machine Blockchain, like: Ethereum,Binance,Polygon,Fantom,0xDai,Avalanche,Thundercore,heco,avax,Harmony,Moonriver,OKex,XinFin,Ubiq,Arbitrum,Theta...<br>
 And you could also deploy these token to any test network,like: Ropsten,Kovan,Binance testnet... <br>
  
-Tutorial Video:<br>
+### Tutorial Video:<br>
 https://youtu.be/37eDqbnDKhI
 <br>
 
-GIF Tutorial:<br>
+### GIF Tutorial:<br>
 https://github.com/AlgoNetwork/TokenFactory/raw/main/GenerateToken.gif
 <br>
 
-Support network:
+### Support network:<br>
 https://algonetwork.github.io/EVM-Blockchain-Index/
 
 イーサリアムERC20トークンのワンクリック発行<br>
@@ -21,7 +21,7 @@ https://algonetwork.github.io/EVM-Blockchain-Index/
 以太坊ERC20代币一键发币<br>
 صدور نشانه های Ethereum ERC20 با یک کلیک
 <br>
-Support Language:
+### Support Language:
 
 >English<br>
 >简体中文<br>
