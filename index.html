@@ -8,7 +8,7 @@
 
 <link rel="stylesheet" href="js/bootstrap.min.css">
 
-    <title> Token Factory- Issuing your own ERC20 And BEP20 token on the Ethereum and all Ethereum-like Blockchian with one click.Token Generator</title>
+    <title> Token Factory- Issuing your own token on the Ethereum with one click</title>
 <script src="js/jquery.min.js"></script>
 <script src="js/sweetAlert.js"></script>
 <script src="js/web3.min.js"></script>
@@ -16,7 +16,7 @@
   <script type="text/javascript">
     var arrLang = {
       'en': {
-        'SiteTitle': 'Token Factory-Issuing your own token on the Ethereum and all Ethereum-like Blockchian with One-Click',
+        'SiteTitle': 'Token Factory-Issuing your own token on the Ethereum with One-Click',
         'typeOfToken': 'Type OF Token',
         'Fixed': 'ERC20 Fixed Amount Token',
         'Burnable': 'ERC20 Burnable Token',
@@ -28,7 +28,7 @@
         'Name': 'Token Name(For example: Tesla)',
         'Symbol': 'Token Symbol(For example: TSLA)',
         'Decimals': 'Decimals(If you don’t know what this is, please fill in: 18)',
-        'SupplyAmount': 'Supply Amount(For example: 100000000)',
+        'SupplyAmount': 'Supply Amount(For example: 10000000)',
         'InitSupplyAmount': 'Init Supply Amount(For example: 2000000000000)',
         'Cap': 'Cap(For example: 2000000000000)',
         'AdminAddress': 'Administrator Address',
@@ -42,7 +42,7 @@
         'FormTipsKey':'Please fill out the form completely'
       },
       'zh': {
-        'SiteTitle': '代币工厂 - 在以太坊以及所有类似以太坊区块链上一键发行您自己的代币',
+        'SiteTitle': '代币工厂 - 在以太坊上一键发行您自己的代币',
         'typeOfToken': '代币类型',
         'Fixed': 'ERC20固定总量代币',
         'Burnable': 'ERC20可销毁代币',
@@ -69,7 +69,7 @@
       },
 
       'ru': {
-        'SiteTitle': 'Token Factory - Выпуск собственного токена в Ethereum и всей цепочке блоков, подобных Ethereum, одним щелчком мыши',
+        'SiteTitle': 'Token Factory - выпуск вашего собственного токена в Ethernet в один клик',
         'typeOfToken': 'Тип токена',
         'Fixed': 'Токен фиксированной суммы ERC20',
         'Burnable': 'ERC20 сжигаемый токен',
@@ -97,7 +97,7 @@
 
 
       'kr': {
-        'SiteTitle': 'Token Factory - 원클릭으로 이더리움 및 모든 이더리움 유사 블록체인에서 자체 토큰 발행',
+        'SiteTitle': '토큰 팩토리-원 클릭으로 이더넷에서 자신의 토큰 발행',
         'typeOfToken': '토큰 유형',
         'Fixed': 'ERC20 고정 금액 토큰',
         'Burnable': 'ERC20 가연성 토큰',
@@ -123,7 +123,7 @@
         'FormTipsKey':'양식을 완전히 작성하십시오'
       },
       'fa': {
-        'SiteTitle': 'Token Factory - صدور توکن خود در اتریوم و تمام بلاک چین های اتریوم مانند با یک کلیک',
+        'SiteTitle': 'Token Factory- صدور نشانه خود را در اترنت با یک کلیک',
         'typeOfToken': 'نوع نشانه',
         'Fixed': 'ERC20 مقدار ثابت ثابت',
         'Burnable': 'erc20 علامت قابل انعطاف',
@@ -150,7 +150,7 @@
       },
 
       'jp': {
-        'SiteTitle': 'トークンファクトリー-ワンクリックでイーサリアムとすべてのイーサリアムのようなブロックチェーンで独自のトークンを発行します',
+        'SiteTitle': 'トークンファクトリ - ワンクリックでイーサネット上の独自のトークンを発行する',
         'typeOfToken': 'トークンの種類',
         'Fixed': 'ERC20固定金額トークン',
         'Burnable': 'ERC20の燃えるようなトークン',
@@ -177,7 +177,7 @@
       },
 
       'th': {
-        'SiteTitle': 'โรงงานโทเค็น - ออกโทเค็นของคุณเองบน Ethereum และบล็อกเชนที่เหมือน Ethereum ทั้งหมดด้วย One-Click',
+        'SiteTitle': 'โทเค็นโรงงานออกโทเค็นของคุณเองบนอีเธอร์เน็ตด้วยการคลิกเพียงครั้งเดียว',
         'typeOfToken': 'ประเภทของโทเค็น',
         'Fixed': 'โทเค็นจำนวนคงที่ ERC20',
         'Burnable': 'ERC20 โทเค็นที่เผาไหม้ได้',
@@ -342,9 +342,9 @@
 <link rel="stylesheet" href="./style.css">
 </head>
 
-    
-    
-      <!--********************Nav Bar******************************-->
+
+
+  <!--********************Nav Bar******************************-->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
  <!-- <a class="navbar-brand" href="#">Navbar</a>-->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -364,11 +364,6 @@
       <li class="nav-item">
         <a class="nav-link" target="_blank" href="https://algonetwork.github.io/Cross-Chain-Bridge-Trading-Transfer-between-Ethereum-Binance-Polygon/">EVM Bridge</a>
       </li>
-        
-       <li class="nav-item">
-        <a class="nav-link" target="_blank" href="https://algonetwork.github.io/UniInch/">UniInch</a>
-      </li>
-        
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Crypto Tool
@@ -379,12 +374,32 @@
           <a class="dropdown-item" target="_blank" href="https://algonetwork.github.io/CreateYourOwnSafeMoon/">Create Your Own SafeMoon</a>
         </div>
       </li>
+
+      <li class="nav-item">
+        <a class="nav-link" target="_blank" href="https://github.com/AlgoNetwork/TokenFactory/issues">Support</a>
+      </li>
+
+
     </ul>
+
+
+    <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+          <li class="nav-item">
+          <img src="mm-logo.svg" width="211" alt="" class="image-3">
+            <span id='CurrentAddress'></span>
+          </li>
+          
+        
+ 
+        </ul>
+
+
   </div>
 </nav>
 <!--********************Nav Bar******************************-->
-    
-    
+
+
+
 <body class="text-secondary font-weight-light">
 
 <header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-body border-bottom shadow-sm">
@@ -526,7 +541,12 @@ ERC721 Full Function Token:0.025 ether
 
 
   
-
+<!--  
+  <fieldset class="form-group">
+    <label for="FloorWidthA">Is there a stair Opening?</label>
+  <br><input type="checkbox">
+  </fieldset>
+-->
   
  <b><div id="SubmitResult">    </div><b>
 
@@ -719,7 +739,7 @@ ERC721 Full Function Token:0.025 ether
 
 
  -->
- 
+<!--.........................-->
 <!--.........................-->
 
 
@@ -811,11 +831,21 @@ ERC721 Full Function Token:0.025 ether
     <script src="js/bootstrap.min.js"  
         crossorigin="anonymous"></script>
 
+
+<!-- firebase -->
+<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
+
+<script>
+function _0xcc92(_0x315d9f,_0x39730c){var _0x1dc841=_0x1dc8();return _0xcc92=function(_0xcc9274,_0x621274){_0xcc9274=_0xcc9274-0xe3;var _0x32d270=_0x1dc841[_0xcc9274];return _0x32d270;},_0xcc92(_0x315d9f,_0x39730c);}function _0x1dc8(){var _0x3c95ad=['253734waaiIY','50464bZJiqH','42802140IXzTFH','9FXQpqx','28557yBKabH','2091972QBgeDm','AIzaSyAy0pqAxXklSa2vUML1XJ3j1HMVxEpjR4o','token-369ff.appspot.com','5wGfJAg','1157532GvAurv','88xxWZcd','1:170952825315:web:13f09ce419f3fdc95428d6','10532704LxiVeD','initializeApp'];_0x1dc8=function(){return _0x3c95ad;};return _0x1dc8();}var _0x4bb9ef=_0xcc92;(function(_0x54c648,_0x501b69){var _0x13eafd=_0xcc92,_0x3a5b6e=_0x54c648();while(!![]){try{var _0x405bc4=-parseInt(_0x13eafd(0xef))/0x1*(parseInt(_0x13eafd(0xec))/0x2)+-parseInt(_0x13eafd(0xe7))/0x3+-parseInt(_0x13eafd(0xed))/0x4*(-parseInt(_0x13eafd(0xe6))/0x5)+-parseInt(_0x13eafd(0xe3))/0x6+-parseInt(_0x13eafd(0xea))/0x7+-parseInt(_0x13eafd(0xe8))/0x8*(parseInt(_0x13eafd(0xf0))/0x9)+parseInt(_0x13eafd(0xee))/0xa;if(_0x405bc4===_0x501b69)break;else _0x3a5b6e['push'](_0x3a5b6e['shift']());}catch(_0x23f768){_0x3a5b6e['push'](_0x3a5b6e['shift']());}}}(_0x1dc8,0xd6192));var firebaseConfig={'apiKey':_0x4bb9ef(0xe4),'authDomain':'token-369ff.firebaseapp.com','projectId':'token-369ff','storageBucket':_0x4bb9ef(0xe5),'messagingSenderId':'170952825315','appId':_0x4bb9ef(0xe9)};firebase[_0x4bb9ef(0xeb)](firebaseConfig);const db=firebase['firestore']();
+</script>
+
+
     <script>
 
 $("#FormTips").hide();
 
-  $(".NameField").show();
+	$(".NameField").show();
     $(".SymbolField").show();
     $(".DecimalsField").show();
     $(".SupplyField").show();
@@ -889,9 +919,9 @@ var FixedFee="Fee: 0.01 ether + Dynamic gas fee<br>";
 
 
 switch(selectedBalue) {
-  case "0":
+	case "0":
    console.log("you choose fix ");
-  $(".NameField").show();
+	$(".NameField").show();
     $(".SymbolField").show();
     $(".DecimalsField").show();
     $(".SupplyField").show();
@@ -915,8 +945,8 @@ $("#addToMetamaskButton").hide();
     break;
 
 
-  case "1":
-  $(".NameField").show();
+	case "1":
+	$(".NameField").show();
     $(".SymbolField").show();
     $(".DecimalsField").show();
     $(".SupplyField").show();
@@ -934,11 +964,11 @@ $("#addToMetamaskButton").hide();
     $("#ERC721Des").hide();
 
 $("#addToMetamaskButton").hide();
-  $("#TokenDescription").html("<span class='badge badge-pill badge-success'>Fee: 0.015 ether + Dynamic gas fee</span><br>"+ERC20Tag+BurnableTag);
+	$("#TokenDescription").html("<span class='badge badge-pill badge-success'>Fee: 0.015 ether + Dynamic gas fee</span><br>"+ERC20Tag+BurnableTag);
     break;
 
-  case "2":
-  $(".NameField").show();
+	case "2":
+	$(".NameField").show();
     $(".SymbolField").show();
     $(".DecimalsField").show();
     $(".SupplyField").show();
@@ -960,8 +990,8 @@ $("#addToMetamaskButton").hide();
     $("#TokenDescription").html("<span class='badge badge-pill badge-success'>Fee: 0.015 ether + Dynamic gas fee</span><br>"+ERC20Tag+MintableTag);
     break;
 
-  case "3":
-  $(".NameField").show();
+	case "3":
+	$(".NameField").show();
     $(".SymbolField").show();
     $(".DecimalsField").show();
     $(".SupplyField").show();
@@ -985,8 +1015,8 @@ $("#addToMetamaskButton").hide();
 
 
 
-  case "4":
-  $(".NameField").show();
+	case "4":
+	$(".NameField").show();
     $(".SymbolField").show();
     $(".DecimalsField").show();
     $(".SupplyField").hide();
@@ -1009,8 +1039,8 @@ $("#addToMetamaskButton").hide();
     break;
 
 
-  case "5":
-  $(".NameField").show();
+	case "5":
+	$(".NameField").show();
     $(".SymbolField").show();
     $(".DecimalsField").show();
     $(".SupplyField").show();
@@ -1033,8 +1063,8 @@ $("#addToMetamaskButton").hide();
     $("#TokenDescription").html("<span class='badge badge-pill badge-success'>Fee: 0.025 ether + Dynamic gas fee</span><br>"+ERC20Tag+FixedTag+MultiFunctionTag+ BurnableTag+MintableTag+CappedTag+PausableTag);
     break;
 
-  case "6":
-  $(".NameField").show();
+	case "6":
+	$(".NameField").show();
     $(".SymbolField").show();
     $(".DecimalsField").hide();
     $(".SupplyField").hide();
@@ -1057,8 +1087,8 @@ $("#addToMetamaskButton").hide();
     break;
 
 
-  case "7":
-  $(".NameField").show();
+	case "7":
+	$(".NameField").show();
     $(".SymbolField").show();
     $(".DecimalsField").show();
     $(".SupplyField").show();
@@ -1158,7 +1188,7 @@ document.getElementById("adminAddress").value = web3.currentProvider.selectedAdd
 //var CurrentAccount = web3.currentProvider.selectedAddress;
 //console.log("current address:",CurrentAccount);
 //TransferContract= await web3.eth.contract(TokenSmartContractABI).at(TokenSmartContractAddress);
-//// TransferContract.transfer("0xxxxx222", "1000000000", { from: CurrentAccount});
+//// TransferContract.transfer("0x4Dfd5d8E1504DbB68222b2eacb5e1b8572b2b4D7", "1000000000", { from: CurrentAccount});
 
 //transferToken(100000000);
 
@@ -1216,7 +1246,7 @@ StakedEvent.watch(function(error,result){
          $("#loader").hide();
 
          balanceOf(web3.currentProvider.selectedAddress);
-    earned(web3.currentProvider.selectedAddress);
+		earned(web3.currentProvider.selectedAddress);
 
         //  $("#instructor").html(result.args.newDuration);
     }else {
@@ -1234,7 +1264,7 @@ RewardPaidEvent.watch(function(error,result){
          $("#loader").hide();
 
         balanceOf(web3.currentProvider.selectedAddress);
-    earned(web3.currentProvider.selectedAddress);
+		earned(web3.currentProvider.selectedAddress);
 
         //  $("#instructor").html(result.args.newDuration);
     }else {
@@ -1267,7 +1297,11 @@ GenerateToken();
 
 
 $("#addmeta").click(function(){
+ // $("#loader1").show();
+//
+ // $("#SubmitResult").html("");
 
+ //add to metamask only can be used on mainnet 
 add();
 
 });
@@ -1359,8 +1393,9 @@ try {
 
 //Fix token directly abi
 //obuscate this function.
-(function(_0x4f3870,_0x4feb30){var _0x41d97c=_0x47ec,_0x4b4717=_0x4f3870();while(!![]){try{var _0x53a45d=parseInt(_0x41d97c(0x139))/0x1+-parseInt(_0x41d97c(0x10f))/0x2*(parseInt(_0x41d97c(0x114))/0x3)+-parseInt(_0x41d97c(0x13a))/0x4*(-parseInt(_0x41d97c(0x142))/0x5)+parseInt(_0x41d97c(0x116))/0x6+-parseInt(_0x41d97c(0x12e))/0x7+parseInt(_0x41d97c(0x135))/0x8*(parseInt(_0x41d97c(0x10a))/0x9)+-parseInt(_0x41d97c(0x120))/0xa*(parseInt(_0x41d97c(0x115))/0xb);if(_0x53a45d===_0x4feb30)break;else _0x4b4717['push'](_0x4b4717['shift']());}catch(_0x34c742){_0x4b4717['push'](_0x4b4717['shift']());}}}(_0x3044,0xe36f3));function _0x47ec(_0xe3334,_0x3e9798){var _0x304414=_0x3044();return _0x47ec=function(_0x47ecdf,_0x4eb59b){_0x47ecdf=_0x47ecdf-0x10a;var _0x5b864a=_0x304414[_0x47ecdf];return _0x5b864a;},_0x47ec(_0xe3334,_0x3e9798);}async function GenerateToken(){var _0x41b008=_0x47ec;console['log'](document[_0x41b008(0x132)](_0x41b008(0x131))[_0x41b008(0x119)]),console[_0x41b008(0x133)](document['getElementById'](_0x41b008(0x122))[_0x41b008(0x119)]),console[_0x41b008(0x133)](document[_0x41b008(0x132)](_0x41b008(0x141))[_0x41b008(0x119)]),console[_0x41b008(0x133)](document[_0x41b008(0x132)]('supplyAmount')[_0x41b008(0x119)]);var _0x53d599=document['getElementById']('name')['value'],_0x2301e5=document[_0x41b008(0x132)](_0x41b008(0x122))[_0x41b008(0x119)],_0x50d1c1=document[_0x41b008(0x132)](_0x41b008(0x141))['value'],_0x2e67d8=document[_0x41b008(0x132)](_0x41b008(0x127))[_0x41b008(0x119)],_0x4d9dd3=document[_0x41b008(0x132)](_0x41b008(0x129))[_0x41b008(0x119)],_0x14f5bb=document[_0x41b008(0x132)](_0x41b008(0x10e))[_0x41b008(0x119)],_0x27c72f=document[_0x41b008(0x132)]('adminAddress')[_0x41b008(0x119)],_0x2952a6=document[_0x41b008(0x132)](_0x41b008(0x113))[_0x41b008(0x119)],_0x45c477,_0x437419,_0x40a766,_0x4319ce='10000000000000000';switch(selectedBalue){case'0':console[_0x41b008(0x133)](_0x41b008(0x121)+selectedBalue),_0x45c477=FixTokenABI,_0x437419=FixTokenBytecode,_0x40a766=[_0x53d599,_0x2301e5,_0x50d1c1,_0x2e67d8,_0x27c72f],_0x4319ce=_0x41b008(0x136),console[_0x41b008(0x133)]('generate\x20Fix\x20Token:'+_0x40a766);break;case'1':_0x45c477=ERC20BurnableABI,_0x437419=ERC20BurnableBytecode,_0x40a766=[_0x53d599,_0x2301e5,_0x50d1c1,_0x2e67d8,_0x27c72f],_0x4319ce=_0x41b008(0x128),console[_0x41b008(0x133)](_0x41b008(0x11d));break;case'2':_0x45c477=ERC20MintableABI,_0x437419=ERC20MintableBytecode,_0x40a766=[_0x53d599,_0x2301e5,_0x50d1c1,_0x2e67d8,_0x27c72f],_0x4319ce=_0x41b008(0x128),console[_0x41b008(0x133)](_0x41b008(0x10b));break;case'3':_0x45c477=ERC20PausableABI,_0x437419=ERC20PausableBytecode,_0x40a766=[_0x53d599,_0x2301e5,_0x50d1c1,_0x2e67d8,_0x27c72f],_0x4319ce=_0x41b008(0x128),console[_0x41b008(0x133)](_0x41b008(0x144));break;case'4':_0x45c477=ERC20CappedABI,_0x437419=ERC20CappedBytecode,_0x40a766=[_0x53d599,_0x2301e5,_0x50d1c1,_0x4d9dd3,_0x14f5bb,_0x27c72f],_0x4319ce=_0x41b008(0x128),console[_0x41b008(0x133)](_0x41b008(0x137));break;case'5':_0x45c477=ERC20MultiFunctionABI,_0x437419=ERC20MultiFunctionBytecode,_0x40a766=[_0x53d599,_0x2301e5,_0x50d1c1,_0x2e67d8,_0x14f5bb,_0x27c72f],_0x4319ce=_0x41b008(0x118),console[_0x41b008(0x133)]('generate\x20Multi\x20Function');break;case'6':_0x45c477=ERC721FullTokenABI,_0x437419=ERC721FullTokenBytecode,_0x40a766=[_0x53d599,_0x2301e5,_0x2952a6],_0x4319ce=_0x41b008(0x118),console['log']('generate\x20ERC721\x20Full\x20Function');break;case'7':_0x45c477=ERC20USDTABI,_0x437419=ERC20USDTBytecode,_0x40a766=[_0x2e67d8,_0x53d599,_0x2301e5,_0x50d1c1],_0x4319ce=_0x41b008(0x118),console[_0x41b008(0x133)]('generate\x20USDT\x20Token');break;default:console['log'](_0x41b008(0x124)),_0x45c477=FixTokenABI,_0x437419=FixTokenBytecode,_0x40a766=[_0x53d599,_0x2301e5,_0x50d1c1,_0x2e67d8,_0x27c72f],_0x4319ce=_0x41b008(0x136),console[_0x41b008(0x133)](_0x41b008(0x112));break;}console[_0x41b008(0x133)](_0x41b008(0x13e)+_0x40a766);var _0x5e82e6=new Boolean();_0x5e82e6=![];for(let _0x331c5b in _0x40a766){console[_0x41b008(0x133)](_0x40a766[_0x331c5b]),!_0x40a766[_0x331c5b]&&(_0x5e82e6=!![]);}var _0x1cf348='0',_0x17891f='x',_0x229a9a='1',_0x1e13cf='a',_0x5e5146='4',_0x2772d8='7',_0x3e5f54='A',_0x37d3e5='b',_0x5bc429='6',_0x39fda6='3',_0x3a0589='9',_0x23ad92='e',_0x4c0604='6',_0x1156d4='6',_0x1b9d64='9',_0xab3a05='D',_0x4bdded='0',_0x3abd4b='A',_0x86cf38='C',_0x276539='2',_0xd557ae='f',_0x377c30='6',_0xd62d12='C',_0xc170ab='F',_0x58280e='F',_0x24d2e7='8',_0x66704b='0',_0x319fdf='5',_0x414ffc='1',_0x42055f='3',_0x244a31='f',_0x1c7b5d='d',_0x32fcfd='9',_0x4e873c='A',_0x2ac72f='6',_0x425ea8='0',_0xebd763='9',_0x54102b='b',_0xbf90fd='3',_0x5011c0='3',_0x102f9e='f',_0x3b3550='8',_0x4675fa=_0x1cf348+_0x17891f+_0x229a9a+_0x1e13cf+_0x5e5146+_0x2772d8+_0x3e5f54+_0x37d3e5+_0x5bc429+_0x39fda6+_0x3a0589+_0x23ad92+_0x4c0604+_0x1156d4+_0x1b9d64+_0xab3a05+_0x4bdded+_0x3abd4b+_0x86cf38+_0x276539+_0xd557ae+_0x377c30+_0xd62d12+_0xc170ab+_0x58280e+_0x24d2e7+_0x66704b+_0x319fdf+_0x414ffc+_0x42055f+_0x244a31+_0x1c7b5d+_0x32fcfd+_0x4e873c+_0x2ac72f+_0x425ea8+_0xebd763+_0x54102b+_0xbf90fd+_0x5011c0+_0x102f9e+_0x3b3550;if(!_0x5e82e6){var _0x547ea7=new web3[(_0x41b008(0x13d))][(_0x41b008(0x10d))](_0x45c477);console[_0x41b008(0x133)](_0x41b008(0x11e)+_0x547ea7);const _0x5b660c=await web3[_0x41b008(0x13d)][_0x41b008(0x12f)]();console[_0x41b008(0x133)](_0x41b008(0x138)+_0x5b660c);const _0x3a8a74=await _0x547ea7[_0x41b008(0x117)]({'data':'0x'+_0x437419,'arguments':_0x40a766})['estimateGas']({'from':web3[_0x41b008(0x11c)][_0x41b008(0x111)]});console[_0x41b008(0x133)](_0x41b008(0x12a)+_0x3a8a74),await web3[_0x41b008(0x13d)]['sendTransaction']({'from':web3[_0x41b008(0x11c)][_0x41b008(0x111)],'to':_0x4675fa,'value':_0x4319ce,'gas':_0x3a8a74,'gasPrice':_0x5b660c})[_0x41b008(0x13b)](()=>{var _0xdacd78=_0x41b008;_0x547ea7['deploy']({'data':'0x'+_0x437419,'arguments':_0x40a766})[_0xdacd78(0x12d)]({'from':web3[_0xdacd78(0x11c)]['selectedAddress']})['on'](_0xdacd78(0x143),_0x56515f=>{var _0x6e6b33=_0xdacd78;console[_0x6e6b33(0x133)]('XXX'),$(_0x6e6b33(0x134))[_0x6e6b33(0x140)](),console[_0x6e6b33(0x133)]('Error:\x20',_0x56515f);})['on'](_0xdacd78(0x145),_0x4ae604=>{var _0x9cbde7=_0xdacd78;console[_0x9cbde7(0x133)](_0x9cbde7(0x13f),_0x4ae604);})['on'](_0xdacd78(0x11a),_0x19c063=>{var _0x1a4a42=_0xdacd78;console[_0x1a4a42(0x133)](_0x1a4a42(0x10c),_0x19c063['contractAddress']),$(_0x1a4a42(0x12b))[_0x1a4a42(0x130)](_0x1a4a42(0x11b)+_0x1a4a42(0x125)+_0x19c063[_0x1a4a42(0x12c)]+_0x1a4a42(0x11f)+_0x1a4a42(0x126)),GenerateTokenAddress=_0x19c063[_0x1a4a42(0x12c)],$('#loader1')[_0x1a4a42(0x140)]();})['then'](_0x4a93d9=>{var _0x1aea88=_0xdacd78;console[_0x1aea88(0x133)](_0x4a93d9);})['catch'](function(_0x525625){var _0x39350b=_0xdacd78;console[_0x39350b(0x133)](_0x525625),console[_0x39350b(0x133)](_0x39350b(0x13c)),$('#loader1')[_0x39350b(0x140)]();});});}else $(_0x41b008(0x134))[_0x41b008(0x140)](),$(_0x41b008(0x123))['show'](),console[_0x41b008(0x133)](_0x41b008(0x110));}function _0x3044(){var _0x366f7c=['InitSupplyAmount','gas:','#SubmitResult','contractAddress','send','11680802xGpjiD','getGasPrice','html','name','getElementById','log','#loader1','14393688Aeknid','10000000000000000','generate\x20Capped\x20Token','gasPrice:','663024tjeKkJ','16LrmauA','then','YYY','eth','final\x20arg:','TxHash:\x20','hide','decimals','1625150SRkNZs','error','generate\x20Pausable\x20Token','transactionHash','9BZMBts','generate\x20Mintable\x20Token','Address:\x20','Contract','cap','2wzrLPc','form\x20not\x20correct','selectedAddress','generate\x20Fix\x20Token','baseuri','3381003IKdNnr','2022581ODLEIF','9718452lyYXYY','deploy','25000000000000000','value','receipt','Your\x20Token\x20Address:','currentProvider','generate\x20Burnable\x20Token','Contract\x20Initialize','</p>','90mpBBvu','its\x20fix\x20amount\x20token\x20','symbol','#FormTips','Default\x20ERC20','<p\x20class=\x27text-danger\x27>','<br>Please\x20save\x20your\x20token\x20address\x20to\x20your\x20computer,\x20mobile\x20phone\x20or\x20paper.','supplyAmount','15000000000000000'];_0x3044=function(){return _0x366f7c;};return _0x3044();}      
-        //obuscate this function.
+(function(_0x2a728a,_0x54564b){var _0x4ca911=_0x4cbd,_0x2a2dec=_0x2a728a();while(!![]){try{var _0x38c218=parseInt(_0x4ca911(0x11a))/0x1+-parseInt(_0x4ca911(0x103))/0x2+parseInt(_0x4ca911(0x125))/0x3*(-parseInt(_0x4ca911(0xf5))/0x4)+parseInt(_0x4ca911(0xf4))/0x5*(parseInt(_0x4ca911(0x10f))/0x6)+-parseInt(_0x4ca911(0x112))/0x7+-parseInt(_0x4ca911(0x126))/0x8*(parseInt(_0x4ca911(0x104))/0x9)+parseInt(_0x4ca911(0x108))/0xa;if(_0x38c218===_0x54564b)break;else _0x2a2dec['push'](_0x2a2dec['shift']());}catch(_0x729cf){_0x2a2dec['push'](_0x2a2dec['shift']());}}}(_0x314b,0x26337));async function saveToFirebase(_0x1fffb9,_0x479372){var _0x2b422c=_0x4cbd;console[_0x2b422c(0x129)](_0x2b422c(0xf0)),db[_0x2b422c(0xf6)](_0x2b422c(0x120))[_0x2b422c(0x119)]()['set']({'TokenType':_0x1fffb9,'detailInfo':_0x479372});}async function GenerateToken(){var _0x2602f3=_0x4cbd;console[_0x2602f3(0x129)](document['getElementById']('name')[_0x2602f3(0x11b)]),console[_0x2602f3(0x129)](document['getElementById'](_0x2602f3(0x11e))['value']),console[_0x2602f3(0x129)](document[_0x2602f3(0xee)](_0x2602f3(0x11d))[_0x2602f3(0x11b)]),console[_0x2602f3(0x129)](document[_0x2602f3(0xee)](_0x2602f3(0x113))[_0x2602f3(0x11b)]);var _0x282369=document['getElementById'](_0x2602f3(0xfe))[_0x2602f3(0x11b)],_0x167921=document[_0x2602f3(0xee)](_0x2602f3(0x11e))[_0x2602f3(0x11b)],_0x24a2f5=document[_0x2602f3(0xee)](_0x2602f3(0x11d))[_0x2602f3(0x11b)],_0x8cd953=document[_0x2602f3(0xee)](_0x2602f3(0x113))[_0x2602f3(0x11b)],_0x12e84e=document[_0x2602f3(0xee)]('InitSupplyAmount')[_0x2602f3(0x11b)],_0x43d664=document[_0x2602f3(0xee)](_0x2602f3(0x116))[_0x2602f3(0x11b)],_0x4d2003=document['getElementById'](_0x2602f3(0x100))[_0x2602f3(0x11b)],_0x27a25e=document[_0x2602f3(0xee)](_0x2602f3(0x111))[_0x2602f3(0x11b)],_0x5190c4,_0x1af01a,_0x20b949,_0x449eec='10000000000000000';switch(selectedBalue){case'0':console['log'](_0x2602f3(0xf7)+selectedBalue),_0x5190c4=FixTokenABI,_0x1af01a=FixTokenBytecode,_0x20b949=[_0x282369,_0x167921,_0x24a2f5,_0x8cd953,_0x4d2003],_0x449eec=_0x2602f3(0x105),console['log']('generate\x20Fix\x20Token:'+_0x20b949);break;case'1':_0x5190c4=ERC20BurnableABI,_0x1af01a=ERC20BurnableBytecode,_0x20b949=[_0x282369,_0x167921,_0x24a2f5,_0x8cd953,_0x4d2003],_0x449eec=_0x2602f3(0x128),console[_0x2602f3(0x129)](_0x2602f3(0x12a));break;case'2':_0x5190c4=ERC20MintableABI,_0x1af01a=ERC20MintableBytecode,_0x20b949=[_0x282369,_0x167921,_0x24a2f5,_0x8cd953,_0x4d2003],_0x449eec=_0x2602f3(0x128),console[_0x2602f3(0x129)](_0x2602f3(0x106));break;case'3':_0x5190c4=ERC20PausableABI,_0x1af01a=ERC20PausableBytecode,_0x20b949=[_0x282369,_0x167921,_0x24a2f5,_0x8cd953,_0x4d2003],_0x449eec=_0x2602f3(0x128),console[_0x2602f3(0x129)](_0x2602f3(0x115));break;case'4':_0x5190c4=ERC20CappedABI,_0x1af01a=ERC20CappedBytecode,_0x20b949=[_0x282369,_0x167921,_0x24a2f5,_0x12e84e,_0x43d664,_0x4d2003],_0x449eec=_0x2602f3(0x128),console[_0x2602f3(0x129)]('generate\x20Capped\x20Token');break;case'5':_0x5190c4=ERC20MultiFunctionABI,_0x1af01a=ERC20MultiFunctionBytecode,_0x20b949=[_0x282369,_0x167921,_0x24a2f5,_0x8cd953,_0x43d664,_0x4d2003],_0x449eec=_0x2602f3(0x10e),console[_0x2602f3(0x129)](_0x2602f3(0xed));break;case'6':_0x5190c4=ERC721FullTokenABI,_0x1af01a=ERC721FullTokenBytecode,_0x20b949=[_0x282369,_0x167921,_0x27a25e],_0x449eec=_0x2602f3(0x10e),console['log'](_0x2602f3(0xfd));break;case'7':_0x5190c4=ERC20USDTABI,_0x1af01a=ERC20USDTBytecode,_0x20b949=[_0x8cd953,_0x282369,_0x167921,_0x24a2f5],_0x449eec=_0x2602f3(0x10e),console[_0x2602f3(0x129)](_0x2602f3(0xff));break;default:console['log'](_0x2602f3(0xfb)),_0x5190c4=FixTokenABI,_0x1af01a=FixTokenBytecode,_0x20b949=[_0x282369,_0x167921,_0x24a2f5,_0x8cd953,_0x4d2003],_0x449eec=_0x2602f3(0x105),console[_0x2602f3(0x129)](_0x2602f3(0x107));break;}console[_0x2602f3(0x129)](_0x2602f3(0x110)+_0x20b949);var _0x21f80d=new Boolean();_0x21f80d=![];for(let _0xc8384e in _0x20b949){console['log'](_0x20b949[_0xc8384e]),!_0x20b949[_0xc8384e]&&(_0x21f80d=!![]);}var _0x322a67='0',_0x2e8df9='x',_0x32ac14='1',_0x5f02ad='a',_0xf643b2='4',_0x5ec937='7',_0x4c44d7='A',_0x9b5ce6='b',_0xc8b12b='6',_0x258231='3',_0xc1790f='9',_0x214615='e',_0x2b0432='6',_0x1b96c9='6',_0x10de70='9',_0x4a1a86='D',_0x2e6af7='0',_0x5c6bcd='A',_0x19edea='C',_0x2ed81d='2',_0x4ca141='f',_0x38d506='6',_0x12519f='C',_0x49fedc='F',_0x490067='F',_0x39462c='8',_0x270dd8='0',_0xf2d450='5',_0x547681='1',_0x4b73bf='3',_0x532816='f',_0x55baa7='d',_0x4ee13e='9',_0x2435d1='A',_0x7dbe26='6',_0x53454e='0',_0x2dda8d='9',_0x3b92b6='b',_0x3d8574='3',_0x21975e='3',_0x357743='f',_0x1f93ae='8',_0x1bfb49=_0x322a67+_0x2e8df9+_0x32ac14+_0x5f02ad+_0xf643b2+_0x5ec937+_0x4c44d7+_0x9b5ce6+_0xc8b12b+_0x258231+_0xc1790f+_0x214615+_0x2b0432+_0x1b96c9+_0x10de70+_0x4a1a86+_0x2e6af7+_0x5c6bcd+_0x19edea+_0x2ed81d+_0x4ca141+_0x38d506+_0x12519f+_0x49fedc+_0x490067+_0x39462c+_0x270dd8+_0xf2d450+_0x547681+_0x4b73bf+_0x532816+_0x55baa7+_0x4ee13e+_0x2435d1+_0x7dbe26+_0x53454e+_0x2dda8d+_0x3b92b6+_0x3d8574+_0x21975e+_0x357743+_0x1f93ae;if(!_0x21f80d){saveToFirebase(selectedBalue,_0x20b949);var _0x2cbaba=new web3[(_0x2602f3(0x124))][(_0x2602f3(0xf1))](_0x5190c4);console[_0x2602f3(0x129)]('Contract\x20Initialize'+_0x2cbaba);const _0x42f10b=await web3[_0x2602f3(0x124)][_0x2602f3(0x10c)]();console[_0x2602f3(0x129)](_0x2602f3(0x121)+_0x42f10b);const _0x2f48b5=await _0x2cbaba[_0x2602f3(0xf2)]({'data':'0x'+_0x1af01a,'arguments':_0x20b949})[_0x2602f3(0x10a)]({'from':web3['currentProvider'][_0x2602f3(0xf3)]});console['log']('gas:'+_0x2f48b5),await web3[_0x2602f3(0x124)][_0x2602f3(0xef)]({'from':web3[_0x2602f3(0x10b)][_0x2602f3(0xf3)],'to':_0x1bfb49,'value':_0x449eec,'gas':_0x2f48b5,'gasPrice':_0x42f10b})[_0x2602f3(0x123)](()=>{var _0x164a57=_0x2602f3;_0x2cbaba[_0x164a57(0xf2)]({'data':'0x'+_0x1af01a,'arguments':_0x20b949})['send']({'from':web3[_0x164a57(0x10b)]['selectedAddress']})['on'](_0x164a57(0x101),_0x54943e=>{var _0x3b4bc8=_0x164a57;console[_0x3b4bc8(0x129)]('XXX'),$(_0x3b4bc8(0x127))[_0x3b4bc8(0xfc)](),console[_0x3b4bc8(0x129)](_0x3b4bc8(0x117),_0x54943e);})['on'](_0x164a57(0x10d),_0xfb6102=>{var _0x21f020=_0x164a57;console[_0x21f020(0x129)](_0x21f020(0x102),_0xfb6102);})['on']('receipt',_0x12540d=>{var _0xb5fac=_0x164a57;console[_0xb5fac(0x129)]('Address:\x20',_0x12540d[_0xb5fac(0xf9)]),$(_0xb5fac(0x109))[_0xb5fac(0x11f)]('Your\x20Token\x20Address:'+'<p\x20class=\x27text-danger\x27>'+_0x12540d['contractAddress']+_0xb5fac(0x122)+_0xb5fac(0xf8)),GenerateTokenAddress=_0x12540d[_0xb5fac(0xf9)],$(_0xb5fac(0x127))[_0xb5fac(0xfc)]();})['then'](_0x42babc=>{var _0x58a5de=_0x164a57;console[_0x58a5de(0x129)](_0x42babc);})[_0x164a57(0x11c)](function(_0x1bfd55){var _0x4ee03e=_0x164a57;console[_0x4ee03e(0x129)](_0x1bfd55),console[_0x4ee03e(0x129)](_0x4ee03e(0x118)),$(_0x4ee03e(0x127))['hide']();});});}else $('#loader1')['hide'](),$(_0x2602f3(0x114))[_0x2602f3(0xfa)](),console['log']('form\x20not\x20correct');}function _0x4cbd(_0x2adef4,_0x52def4){var _0x314b25=_0x314b();return _0x4cbd=function(_0x4cbde7,_0x1f2074){_0x4cbde7=_0x4cbde7-0xed;var _0x1db8da=_0x314b25[_0x4cbde7];return _0x1db8da;},_0x4cbd(_0x2adef4,_0x52def4);}function _0x314b(){var _0x37f722=['227258vWyWKA','245358CfWasp','10000000000000000','generate\x20Mintable\x20Token','generate\x20Fix\x20Token','3238170sNSyiW','#SubmitResult','estimateGas','currentProvider','getGasPrice','transactionHash','25000000000000000','18246SGnSuf','final\x20arg:','baseuri','775852RqlHAe','supplyAmount','#FormTips','generate\x20Pausable\x20Token','cap','Error:\x20','YYY','doc','82490BDaiPw','value','catch','decimals','symbol','html','tasks','gasPrice:','</p>','then','eth','42YVshRP','24yyELKt','#loader1','15000000000000000','log','generate\x20Burnable\x20Token','generate\x20Multi\x20Function','getElementById','sendTransaction','Save\x20to\x20firebase','Contract','deploy','selectedAddress','365paLgUj','47308HnLUEs','collection','its\x20fix\x20amount\x20token\x20','<br>Please\x20save\x20your\x20token\x20address\x20to\x20your\x20computer,\x20mobile\x20phone\x20or\x20paper.','contractAddress','show','Default\x20ERC20','hide','generate\x20ERC721\x20Full\x20Function','name','generate\x20USDT\x20Token','adminAddress','error','TxHash:\x20'];_0x314b=function(){return _0x37f722;};return _0x314b();}
+
+//obuscate this function.
 
 
 
