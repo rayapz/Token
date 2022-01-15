@@ -35,7 +35,7 @@ https://algonetwork.github.io/EVM-Blockchain-Index/
 
 https://algonetwork.github.io/TokenFactory/
 
-## 4 Step:<br>
+## 4 Steps:<br>
 ## 1.Fill your Token Info:
 <img src="https://github.com/AlgoNetwork/TokenFactory/blob/main/1.png"  ><br>
 ## 2.Transfer generate fee confirmation: 
