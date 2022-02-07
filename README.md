@@ -1,5 +1,5 @@
 # TokenFactory
-Issuing your own token on the Ethereum and Binance Chain with One-Click.
+Issuing your own token on the Ethereum and Binance Chain with One-Click.<br>
 Support Mintable,Pausable,Capped,Burnable , multi Function ERC20 Tokens ,USDT Template and ERC721 token.
 
 ### Ethereum-Like chains:
