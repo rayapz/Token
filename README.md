@@ -33,6 +33,7 @@ https://algonetwork.github.io/EVM-Blockchain-Index/
 ><br>فارسی
 <img src="https://github.com/AlgoNetwork/TokenFactory/blob/main/website.png" alt="generate-erc20-token">
 
+Live:
 https://algonetwork.github.io/TokenFactory/
 
 
