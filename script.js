@@ -140,7 +140,7 @@ DOMstrings.stepsForm.addEventListener('click', e => {
     return;
   }
 
-  //find active panel
+  // 
   const activePanel = findParent(eventTarget, `${DOMstrings.stepFormPanelClass}`);
 
   let activePanelNum = Array.from(DOMstrings.stepFormPanels).indexOf(activePanel);
