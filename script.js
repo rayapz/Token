@@ -160,7 +160,7 @@ DOMstrings.stepsForm.addEventListener('click', e => {
 
 });
 
-//SETTING PROPER FORM HEIGHT ONLOAD
+//setFormHeight ONLOAD
 window.addEventListener('load', setFormHeight, false);
 
 //SETTING PROPER FORM HEIGHT ONRESIZE
