@@ -94,7 +94,7 @@ const setActivePanel = activePanelNum => {
 
 };
 
-//set form height equal to current panel height
+//set panel height
 const formHeight = activePanel => {
 
   const activePanelHeight = activePanel.offsetHeight;
