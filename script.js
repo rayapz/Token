@@ -176,7 +176,7 @@ const setAnimationType = newType => {
 
 //selector onchange - changing animation
 const animationSelect = document.querySelector('.pick-animation__select');
-
+//animation select change.
 animationSelect.addEventListener('change', () => {
   const newAnimationType = animationSelect.value;
 
